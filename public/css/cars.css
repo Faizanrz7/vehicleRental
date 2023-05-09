@@ -1,0 +1,236 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  background-image: url("https://cdn.luxe.digital/media/20230103135715/best-electric-motorcycles-2023-luxury-luxe-digital.jpg");
+  /* background-repeat: no-repeat; */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar-brand {
+  margin-left: 170px;
+}
+
+#navbarSupportedContent {
+  margin-left: 200px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: red;
+}
+
+.navbar-nav > li {
+  margin-left: 5px;
+  padding-left: 20px;
+}
+
+/* values */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120%;
+  max-width: 1000px;
+  height: 8vw;
+  margin: 0 auto;
+  border: solid 1px red;
+  background-color: black;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+.pickup-date-container,
+.drop-date-container,
+.city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.avail-col {
+  display: flex;
+  justify-content: space-between;
+}
+
+select,
+input[type="datetime-local"],
+button {
+  height: 40px;
+  padding: 0 10px;
+  color: red;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: transparent;
+}
+
+select {
+  width: 200px;
+}
+
+input[type="datetime-local"] {
+  width: 200px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.5;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: red;
+}
+
+/* card */
+.card-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-bottom: 50px;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  max-width: 350px;
+  height: 550px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* overflow: hidden; */
+}
+
+img {
+  border-radius: 15px;
+}
+
+.card-header {
+  padding: 0px;
+  border-radius: 15px;
+}
+
+.card-header img {
+  width: 100%;
+  height: 18vw;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-list li strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
+.rent-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.color-picker {
+  display: flex;
+  padding-right: 15px;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.rating {
+  display: flex;
+  padding-right: 140px;
+}
+
+.star {
+  font-size: 20px;
+  color: #ffce00;
+  margin-right: 5px;
+}
+
+.star.active {
+  color: #ffce00;
+}
+
+/* carousel*/
+
+#myDIV {
+  display: flex;
+}
+.mySlides {
+  display: none;
+}

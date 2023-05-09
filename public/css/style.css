@@ -1,0 +1,95 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  background-image: url("https://www.enterprise.co.uk/en/home/_jcr_content/root/container/container/container_933387721_/image.coreimg.82.1920.png/1667526272927/img-2-3x-img-2-3x.png");
+  /* background-repeat: no-repeat; */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* NAVBAR */
+
+.navbar-brand {
+  margin-left: 170px;
+}
+
+#navbarSupportedContent {
+  margin-left: 200px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: red;
+}
+
+.navbar-nav>li {
+  margin-left: 5px;
+  padding-left: 20px;
+}
+
+/* body */
+
+.content {
+  text-align: center;
+  font-size: 30px;
+  /* margin-top: 50px; */
+  position: relative;
+  top: 40px
+}
+
+.card-text {
+  text-align: center;
+}
+
+/* .card-body{
+background-color:black;
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.card {
+  margin: 0 auto;
+  /* Added */
+  float: none;
+  /* Added */
+  margin-bottom: 10px;
+  /* Added */
+}
+
+.card:hover {
+  border: 8px solid black;
+  /* background-color: green; */
+  opacity: 100%;
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.car-size {
+  max-width: 100%;
+  height: 12.5vw;
+  object-fit: cover;
+}
+
+.bus-size {
+  max-width: 100%;
+  height: 12.5vw;
+  object-fit: cover;
+}
+
+.img {
+  width: 80%;
+  height: 100%;
+}
