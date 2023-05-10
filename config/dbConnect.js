@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 
 const dbConnect = () => {
   try {
-    const conn = mongoose.connect(process.env.MONGODB_URI);
+    const conn = mongoose.connect(process.env.MONGODB_ATLAS_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("Database connected Successfull");
   } catch (error) {
     console.log("DB error");

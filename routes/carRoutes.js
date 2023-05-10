@@ -21,7 +21,8 @@ router.get("/allCars", async (req, res) => {
 });
 
 // router.post("/addCar", upload.single("file"), (req, res) => {
-router.post("/addCar", (req, res) => {
+router.post("/addCar", async (req, res) => {
+  console.log("aar");
   try {
     const newCar = new CarModel({
       Name: "Faizan",
@@ -29,9 +30,11 @@ router.post("/addCar", (req, res) => {
       Price: 500,
       Seats: 5,
     });
-    newCar.save();
+    await newCar.save();
 
-    return res.status(200).send({ message: "Carhas been added", data: newCar });
+    return res
+      .status(200)
+      .send({ message: "Car has been added", data: newCar });
   } catch (error) {
     res
       .status(400)

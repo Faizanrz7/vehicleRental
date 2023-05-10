@@ -92,7 +92,7 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/signup.html"));
   // res.send(__dirname);
 });
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   console.log(req.body);
   try {
     const { username, password, Mobile } = req.body;
@@ -101,7 +101,7 @@ app.post("/signup", (req, res) => {
       password: password,
       Mobile: Mobile,
     });
-    newUser.save();
+    await newUser.save();
     res
       .status(200)
       .send({ message: "User Registration Successful", data: newUser });
