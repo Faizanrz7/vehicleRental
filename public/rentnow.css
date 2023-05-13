@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,11 +87,25 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+body {
+  background-color: black;
+  background-image: url("https://www.bugatti.com/fileadmin/_processed_/sei/p1/se-image-d37f5243f6ae21dcfb1fbf28dfe261f5.jpg");
+  /* background-repeat: no-repeat; */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 html {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -32,16 +114,23 @@ table {
   border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-q, blockquote {
+q,
+blockquote {
   quotes: none;
 }
-q:before, q:after, blockquote:before, blockquote:after {
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
   content: "";
   content: none;
 }
@@ -50,7 +139,19 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
   display: block;
 }
 
@@ -82,7 +183,8 @@ a {
   width: 100%;
 }
 
-header, form {
+header,
+form {
   padding: 4em 10%;
 }
 
@@ -95,30 +197,32 @@ h2.heading {
   text-transform: uppercase;
   font-weight: 600;
   text-align: left;
-  color: #506982;
-  border-bottom: 1px solid #506982;
+  color: rgba(137, 207, 240, 1);
+  border-bottom: 1px solid white;
   padding-bottom: 3px;
   margin-bottom: 20px;
+
 }
 
 .controls {
   text-align: left;
   position: relative;
 }
+
 .controls input[type="text"],
 .controls input[type="email"],
 .controls input[type="number"],
 .controls input[type="date"],
 .controls input[type="tel"],
 .controls textarea,
-.controls button,
+/* .controls button, */
 .controls select {
   padding: 12px;
   font-size: 14px;
-  border: 2px solid #c6c6c6;
+  border: 2px solid white;
   width: 100%;
   margin-bottom: 18px;
-  color: #888;
+  color: white;
   font-family: 'Lato', 'sans-serif';
   font-size: 19px;
   font-weight: 300;
@@ -129,8 +233,12 @@ h2.heading {
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  background: rgba(137, 207, 240, 0.3);
+  box-shadow: 5px 10px white;
 }
-.controls input[type="text"]:focus, .controls input[type="text"]:hover,
+
+.controls input[type="text"]:focus,
+.controls input[type="text"]:hover,
 .controls input[type="email"]:focus,
 .controls input[type="email"]:hover,
 .controls input[type="number"]:focus,
@@ -141,42 +249,48 @@ h2.heading {
 .controls input[type="tel"]:hover,
 .controls textarea:focus,
 .controls textarea:hover,
-.controls button:focus,
-.controls button:hover,
+/* .controls button:focus,
+.controls button:hover, */
 .controls select:focus,
 .controls select:hover {
   outline: none;
   border-color: #9FB1C1;
+
 }
-.controls input[type="text"]:focus + label, .controls input[type="text"]:hover + label,
-.controls input[type="email"]:focus + label,
-.controls input[type="email"]:hover + label,
-.controls input[type="number"]:focus + label,
-.controls input[type="number"]:hover + label,
-.controls input[type="date"]:focus + label,
-.controls input[type="date"]:hover + label,
-.controls input[type="tel"]:focus + label,
-.controls input[type="tel"]:hover + label,
-.controls textarea:focus + label,
-.controls textarea:hover + label,
-.controls button:focus + label,
-.controls button:hover + label,
-.controls select:focus + label,
-.controls select:hover + label {
+
+.controls input[type="text"]:focus+label,
+.controls input[type="text"]:hover+label,
+.controls input[type="email"]:focus+label,
+.controls input[type="email"]:hover+label,
+.controls input[type="number"]:focus+label,
+.controls input[type="number"]:hover+label,
+.controls input[type="date"]:focus+label,
+.controls input[type="date"]:hover+label,
+.controls input[type="tel"]:focus+label,
+.controls input[type="tel"]:hover+label,
+.controls textarea:focus+label,
+.controls textarea:hover+label,
+/* .controls button:focus+label,
+.controls button:hover+label, */
+.controls select:focus+label,
+.controls select:hover+label {
   color: #bdcc00;
   cursor: text;
 }
+
 .controls .fa-sort {
   position: absolute;
   right: 10px;
   top: 17px;
   color: #999;
 }
+
 .controls select {
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
 }
+
 .controls label {
   position: absolute;
   left: 8px;
@@ -194,19 +308,21 @@ h2.heading {
   transition: color 0.3s, top 0.3s, background-color 0.8s;
   background-color: white;
 }
+
 .controls label.active {
   top: -11px;
   color: #555;
   background-color: white;
   width: auto;
 }
+
 .controls textarea {
   resize: none;
   height: 200px;
 }
 
 #something {
-  width: 9.9em;
+  width: 10.9em;
 }
 
 #regno {
@@ -217,17 +333,18 @@ h2.heading {
   height: 3.8em;
 }
 
-button {
+/* button {
   cursor: pointer;
-  background-color: #32505F;
+  background-color: blue;
   border: none;
   color: #fff;
   padding: 12px 0;
   float: right;
 }
+
 button:hover {
   background-color: #3b5e70;
-}
+} */
 
 .clear:after {
   content: "";
@@ -237,7 +354,9 @@ button:hover {
 
 .grid {
   background: white;
+  background: transparent;
 }
+
 .grid:after {
   /* Or @extend clearfix */
   content: "";
@@ -249,6 +368,7 @@ button:hover {
   float: left;
   padding-right: 10px;
 }
+
 .grid [class*='col-']:last-of-type {
   padding-right: 0;
 }
@@ -270,7 +390,10 @@ button:hover {
 }
 
 @media (max-width: 760px) {
-  .col-1-4-sm, .col-1-3, .col-2-3 {
+
+  .col-1-4-sm,
+  .col-1-3,
+  .col-2-3 {
     width: 100%;
   }
 
@@ -278,6 +401,112 @@ button:hover {
     padding-right: 0px;
   }
 }
+
 .col-1-8 {
   width: 12.5%;
+}
+
+.radio-cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.hide-cont {
+  width: 450px;
+  height: 50px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+}
+
+::placeholder {
+  color: white;
+}
+
+/* .file-cont {
+  border: 2px solid white;
+  width: 180px;
+  height: 47px;
+  padding-top: 8px;
+  padding-left: 8px;
+  font-size: 10px;
+  border: 2px solid white;
+  width: 50%;
+  margin-bottom: 18px;
+  color: white;
+  font-family: 'Lato', 'sans-serif';
+  font-size: 19px;
+  font-weight: 300;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: transparent;
+  box-shadow: 5px 10px black;
+}
+ */
+input[type=file] {
+  width: 400px;
+  /* max-width: 100%; */
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 5px;
+  background: transparent;
+  border-radius: 2px;
+  border: 2px solid white;
+  background-color: rgba(137, 207, 240, 0.3);
+  box-shadow: 5px 10px white;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+  border-radius: 3px;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+}
+
+.btn:hover {
+  background-color: blue;
+  box-shadow: 0px 15px 20px rgba(0, 0, 255, 0.4);
+  color: black;
+  transform: translateY(-7px);
 }
