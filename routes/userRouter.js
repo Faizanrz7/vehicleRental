@@ -99,4 +99,8 @@ router.post(
   }
 );
 
+router.get("/getUserDetails", (req, res) => {
+  res.send(req.user);
+});
+
 module.exports = router;

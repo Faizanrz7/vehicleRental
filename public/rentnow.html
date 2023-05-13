@@ -1,123 +1,221 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
 
-<!-- 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+
+</head>
+
+<body>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <!-- <script src="rentnow.js"></script> -->
+  <!------ Include the above in your HEAD tag ---------->
+  
+  <!-- 
     Info: Booking Form
     Description: Brand new customer adds a car / new car to their account.
     ==== Credit ==== 
     Forked from Andi: http://codepen.io/andiio/pen/tFECp
     font: Lato (google font)
     Icon font:   http://fontawesome.io/icons/
-
-================================= -->
-<form action="">
-  <!--  General -->
-  <div class="form-group">
-    <center><h1><u class="thick">Adding a Car to your Account</u></h1></center>
-    <br />
-    <br />
-    <br />
-    <h2 class="heading">Owner Details</h2>
-    <div class="controls">
-      <input type="text" id="name" class="floatLabel" name="name">
-      <label for="name">Name</label>
-    </div>
-    <div class="controls">
-      <input type="text" id="email" class="floatLabel" name="email">
-      <label for="email">Email</label>
-    </div>       
-    <div class="controls">
-      <input type="tel" id="phone" class="floatLabel" name="phone">
-      <label for="phone">Phone</label>
-    </div>
-      <div class="grid">
-        <div class="col-2-3">
-          <div class="controls">
-           <input type="text" id="street" class="floatLabel" name="street">
-           <label for="street">Street</label>
-          </div>          
-        </div>
-        <div class="col-1-3">
-          <div class="controls">
-            <input type="number" id="street-number" class="floatLabel" name="street-number">
-            <label for="street-number">House No.</label>
-          </div>         
-        </div>
+    
+    ================================= -->
+    <link href="/css/rentnow.css" rel="stylesheet" type="text/css" />
+    <form id = "rent" action="">
+      <!--  General -->
+      <div class="form-group">
+      <center>
+        <h1><u class="thick" style="font-family: Blackadder ITC; font-size:4em;">Rent Now</u></h1>
+      </center>
+      <br />
+      <br />
+      <br />
+      <h2 class="heading">Owner Details</h2>
+      <div class="controls">
+        <input type="text" id="name" placeholder="Name" lass="floatLabel" name="name">
+        <input type="hidden" id="userId" placeholder="Name" lass="floatLabel" name="name">
+      </div>
+      <div class="controls">
+        <input type="text" id="email" placeholder="Email" class="floatLabel" name="email">
+        <!-- <label for="email">Email</label> -->
+      </div>
+      <div class="controls">
+        <input type="tel" id="phone" placeholder="Phone" class="floatLabel" name="phone">
+        <!-- <label for="phone">Phone</label> -->
       </div>
       <div class="grid">
         <div class="col-2-3">
           <div class="controls">
-            <input type="text" id="city" class="floatLabel" name="city">
-            <label for="city">City</label>
-          </div>         
-        </div>
-        <div class="col-1-3">
-          <div class="controls">
-            <input type="text" id="post-code" class="floatLabel" name="post-code">
-            <label for="post-code">Post Code</label>
-          </div>         
-        </div>
-      </div>
-      <div class="controls">
-        <input type="text" id="country" class="floatLabel" name="country">
-        <label for="country">Country</label>
-      </div>
-  </div>
-  <!--  Car Details -->
-  <div class="form-group">
-    <h2 class="heading">Car Details</h2>
-    
-     <div class="grid"> <!--Start Grid-->
-       <div class="col-1-3">
-   <div class="controls">
-        <input type="text" id="regno" class="floatLabel" name="regno">
-        <label for="regno">Reg. Number</label>
-   </div>
-</div>
-       <button type="submit" value="Search" class="col-1-4" id="btnReg">Search for Reg. No.</button>
-    </div> <!--End Grid-->
-    <div class="grid"> <!--Start Grid-->
-       <div class="col-1-3">
-   <div class="controls">
-        <input type="text" id="carmodel" class="floatLabel" name="carmodel">
-        <label for="carmodel">Car Model</label>
-   </div>
-</div>       
-       
-       <div class="col-1-3">
-   <div class="controls">
-        <input type="number" id="something" class="floatLabel" name="something">
-        <label for="something">Something</label>
-   </div>
-</div>
-    </div><!--End Grid-->
-    
-    <div class="grid">
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-        <input type="date" id="regyear" class="floatLabel" name="regyear" value="<?php echo date('Y-m-d'); ?>">
-        <label for="regyear" class="label-date"><i class="fa fa-calendar"></i>  Reg. Year</label>
-      </div>      
-    </div>
-    <div class="col-1-4 col-1-4-sm">
-      <div class="controls">
-        <input type="date" id="modelyear" class="floatLabel" name="modelyear" value="<?php echo date('Y-m-d'); ?>" />
-        <label for="modelyear" class="label-date"><i class="fa fa-calendar"></i>  Model Year</label>
-      </div>      
-    </div> 
-    </div>
-     
-     </div>
-      <div class="grid">
-        <p class="info-text">Any other information we should know about? Let us know below:</p>
-        <br>
-        <div class="controls">
-          <textarea name="comments" class="floatLabel" id="comments"></textarea>
-          <label for="comments">Comments</label>
+            <input type="text" id="street" placeholder="Street" class="floatLabel" name="street">
+            <!-- <label for="street">Street</label> -->
           </div>
-            <button type="submit" value="Submit" class="col-1-4">Submit</button>
-      </div>  
-  </div> <!-- /.form-group -->
-</form>
+        </div>
+        <div class="col-1-3">
+          <div class="controls">
+            <input type="number" id="street-number" placeholder="Street Number" class="floatLabel" name="street-number">
+            <!-- <label for="street-number">House No.</label> -->
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="col-2-3">
+          <div class="controls">
+            <input type="text" id="city" placeholder="City" class="floatLabel" name="city">
+            <!-- <label for="city">City</label> -->
+          </div>
+        </div>
+        <div class="col-1-3">
+          <div class="controls">
+            <input type="text" id="post-code" placeholder="Post-Code" class="floatLabel" name="post-code">
+            <!-- <label for="post-code">Post Code</label>  -->
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <input type="text" id="country" placeholder="Country" class="floatLabel" name="country">
+        <!-- <label for="country">Country</label> -->
+      </div>
+    </div>
+    <!--  Car Details -->
+    <div class="form-group">
+      <h2 class="heading">Documents </h2>
+
+      <div class="grid">
+        <div class="hide-cont">
+          <!--Start Grid-->
+          <div class="radio-cont" style="padding-left:40px;padding-top:11px;">
+            <br>
+            <label>
+              <input type="radio" name="textbox" value="show" onchange="showTextBox()"><span style="color:white;"> With
+                Driver</span>
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>
+              <input type="radio" name="textbox" value="hide" onchange="hideTextBox()"> <span style="color:white;">
+                Without Driver</span>
+            </label>
+          </div>
+          <!-- </div> -->
+          <div class="col-1-3">
+            <div class="controls" style="padding-left:70px;">
+              <input type="text" id="regno" class="floatLabel" placeholder="License Number" name="carmodel"
+                style=" display:none;width:400px;height:45px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Grid-->
+      <br>
+
+      <div class="grid">
+        <!--Start Grid-->
+        <div class="col-1-3" style="width:320px;">
+          <div class="controls" style="width:320px;">
+            <input type="text" id="aadhar" placeholder="Aadhar Number" class="floatLabel" name="aadhar"
+              pattern="\d{4}-\d{4}-\d{4}" maxlength="19" required>
+            <!-- <label for="carmodel">Car Model</label> -->
+          </div>
+        </div>
+
+        <!-- <div class="col-1-3" style="padding-left:15px;width:370px;">
+          <div class="controls">
+            <div class="file-cont">
+              <input type="file" id="upload-file" class="floatLabel" name="something">
+              <!-- <label for="file-upload">Upload file</label> -->
+            </div>
+            <!-- <label for="something">Something</label> -->
+          </div>
+        </div> -->
+      </div>
+      <!--End Grid-->
+      <br>
+      <div class="grid">
+        <!--Start Grid-->
+        <div class="col-1-3" style="width:320px;">
+          <div class="controls" style="width:320px;">
+            <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
+            <!-- <label for="carmodel">Car Model</label> -->
+          </div>
+        </div>
+
+        <!-- <div class="col-1-3" style="padding-left:15px;">
+          <div class="controls">
+            <div class="file-cont">
+              <input type="file" id="upload-file" class="floatLabel" name="something">
+            </div>
+            <!-- <label for="something">Something</label> -->
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+    <div class="grid">
+    </div>
+    <div class="wrap">
+      <!-- <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a> -->
+      <button class="btn" type="submit" value="Submit">Submit</button>
+    </div>
+    </div>
+    </div> <!-- /.form-group -->
+
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+<script>
+  window.onload =  async (e) => {
+    var userDetails = await fetch("../getUserDetails");
+    userDetails = await userDetails.json();
+    // console.log(userDetails);
+    populateData(userDetails.data);
+  }
+
+
+  function populateData(user){
+    console.log(user);
+
+    // var name = document.getElementById('name');
+    // name.value = user.username;
+
+    var name = document.getElementById('email');
+    name.value = user.username;
+
+    var name = document.getElementById('phone');
+    name.value = user.Mobile;
+    
+    var userId = document.getElementById('userId');
+    name.value = user._id;
+  }
+
+
+   var df = document.getElementById("rent");
+    df.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("name").value;
+      // var userId =  document.getElementById("name").value;
+      
+      var street =  document.getElementById("street").value;
+      var streetNumber =  document.getElementById("street-number").value;
+      var city =  document.getElementById("city").value;
+      var postCode =  document.getElementById("post-code").value;
+      var country =  document.getElementById("country").value;
+      
+      // var email = document.getElementById("email").value;
+      $.ajax({
+        type: "POST",
+        url: window.location.href,
+        dataType: "json",
+        data: { name: name, street: street, streetNumber : streetNumber, city: city,postCode:postCode,country:country },
+        success: function (data) {
+          console.log(data);
+        },
+      });
+      
+    });
+</script>
+</html>
