@@ -15,7 +15,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-
+/* 
 .navbar-brand {
   margin-left: 170px;
 }
@@ -31,7 +31,7 @@ body {
 .navbar-nav > li {
   margin-left: 5px;
   padding-left: 20px;
-}
+} */
 
 /* values */
 .container {
