@@ -121,18 +121,41 @@ app.use("/cars", carRouter);
 app.get("/dashboard", (req, res) => {
   //   res.render("dashboard.ejs", { name: req.user.name });
   // req.user will have the id of the user
+  console.log(req.body);
   res.status(200).send({ message: "Success", user: req.user });
 });
 
 checkAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) return next();
 
-  res.status(400).send({ message: "Not Authenticated" });
+  res.sendFile(path.join(__dirname + "/public/signin.html"));
 };
 
 app.get("/secret", checkAuthenticated, (req, res) => {
   console.log(req.user);
   res.status(200).send({ message: "Secret Revealed", id: req.user });
+});
+
+app.get("/rentNow/:id", checkAuthenticated, (req, res) => {
+  res.status(200).sendFile(path.join(__dirname + "/public/rentnow.html"));
+});
+
+app.post("/rentNow/:id", checkAuthenticated, (req, res) => {
+  const userId = req.user;
+  const vehicleId = req.params.id;
+  console.log(userId, vehicleId);
+  res.status(200).send({ message: "Vehicle Staged For rent" });
+});
+
+app.get("/getUserDetails", async (req, res) => {
+  console.log(req.user);
+  try {
+    const User = await UserModel.findById(req.user);
+    // console.log(User);
+    res.status(200).send({ data: User });
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 app.get("/logout", (req, res) => {
