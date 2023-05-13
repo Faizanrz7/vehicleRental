@@ -5,7 +5,9 @@ html {
 
 body {
   background-color: black;
-  background-image: url("https://www.enterprise.co.uk/en/home/_jcr_content/root/container/container/container_933387721_/image.coreimg.82.1920.png/1667526272927/img-2-3x-img-2-3x.png");
+  /* background-image: url("https://www.enterprise.co.uk/en/home/_jcr_content/root/container/container/container_933387721_/image.coreimg.82.1920.png/1667526272927/img-2-3x-img-2-3x.png"); */
+  background-image: url("https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9hZCUyMHdpdGglMjBjYXJzfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  
   /* background-repeat: no-repeat; */
   height: 100%;
 
@@ -18,7 +20,7 @@ body {
 
 /* NAVBAR */
 
-.navbar-brand {
+/* .navbar-brand {
   margin-left: 170px;
 }
 
@@ -33,9 +35,13 @@ body {
 .navbar-nav>li {
   margin-left: 5px;
   padding-left: 20px;
-}
+} */
 
+.nav{
+  
+}
 /* body */
+
 
 .content {
   text-align: center;
@@ -47,11 +53,12 @@ body {
 
 .card-text {
   text-align: center;
+  color:white;
 }
 
-/* .card-body{
-background-color:black;
-} */
+.card-body{
+background-color:rgba(33, 37, 45, 1);
+}
 
 .container {
   display: flex;
@@ -70,11 +77,11 @@ background-color:black;
 }
 
 .card:hover {
-  border: 8px solid black;
+  /* border: 8px solid black; */
   /* background-color: green; */
   opacity: 100%;
   transform: scale(1.1);
-  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 20px 2px rgba(255, 0, 0, 0.4);
 }
 
 .car-size {

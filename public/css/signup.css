@@ -1,3 +1,6 @@
+
+
+
 .inp {
   width: 60%;
   padding: 12px;
@@ -6,7 +9,7 @@
   margin-left: 5%;
   border-radius: 8px;
   color: white;
-  background-color: black;
+  background-color:black;
 }
 
 .inp2 {
@@ -60,6 +63,9 @@
 
 .container {
   padding: 16px;
+  justify-content: center;
+  background-color: transparent;
+  top:0px;
 
 }
 
@@ -83,29 +89,35 @@ span.psw {
   height: 100%;
   /* Full height */
   overflow: Enable;
-  /* Enable scroll if needed */
-  background-color: yellow;
-  /* Fallback color */
-  background-color: black;
-  /*  Black w/ opacity */
+  background-image: url("https://cdn.mos.cms.futurecdn.net/k8ZbpsB8KEhYq4umCvHBq6.jpg");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
   padding-top: 60px;
-  background-repeat: no-repeat;
-  background-size: 1130px 743px;
-  background-position: 0% -45%;
+  /* background-repeat: no-repeat; */
+  /* background-size: 1130px 743px; */
+  /* background-position: 0% -45%; */
+  /* top:0px; */
 }
 
 
 
 /* model Content/Box */
 .model-content {
-  background-color: #21252d;
-  margin: 5% auto 15% auto;
+  background-color: rgba(33, 37, 45, 0.5);
+  
+  margin: 4% auto 15% 25%;
   /*5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 50%;
   /* Could be more or less, depending on screen size */
   height: 61.5%;
   border-radius: 20px 20px 20px 20px;
+  
 }
 
 /* The Close Button (x) */

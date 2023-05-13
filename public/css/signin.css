@@ -7,221 +7,6 @@ body {
   /*#BCFD4C*/
 }
 
-.headings {
-  color: white;
-}
-
-.dark-mode {
-  background-color: white;
-}
-
-.dark-mode .headings {
-  color: black;
-}
-
-.dark-mode .figcapupper {
-  color: black;
-}
-
-.dark-mode .icon1 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon2 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon3 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon4 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon5 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon6 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon7 {
-  color: black;
-  background-color: white;
-}
-
-.dark-mode .icon8 {
-  color: black;
-  background-color: white;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.fix-margin {
-  height: -19% !important;
-}
-
-.sun {
-  float: right;
-  padding: 6px 12px;
-  margin-top: 13px;
-  margin-right: 35px;
-  cursor: pointer;
-  background-color: #21252d;
-  color: white;
-  font-size: 24px;
-}
-
-.sign {
-  margin-top: 10px;
-  background-color: #21252d;
-}
-
-.sun:hover {
-  color: red;
-}
-
-.navigation {
-  overflow: hidden;
-  background-color: #21252d;
-  width: 100%;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-
-}
-
-.navigation .anchor {
-  float: left;
-  display: block;
-  color: white;
-  margin-left: 35px;
-  margin-top: 9px;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-.navigation .anchor:hover {
-  color: red;
-}
-
-
-.navigation .search-container {
-  float: right;
-}
-
-.navigation input[type=text] {
-  padding: 10px;
-  width: 500px;
-  height: 50px;
-  border: 1px solid yellow;
-  margin-top: 9px;
-  font-size: 17px;
-  border: none;
-  border-radius: 8px 0px 0px 8px;
-  background-color: black;
-}
-
-.navigation .search-container button {
-  float: right;
-  padding: 10px 10px;
-  margin-top: 9px;
-  margin-right: 45px;
-  width: 50px;
-  height: 50.5px;
-  background: #3d464d;
-  color: white;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: 0px 8px 8px 0px;
-}
-
-.navigation .search-container button:hover {
-  background: ;
-}
-
-@media screen and (max-width: 600px) {
-  .navigation .search-container {
-    float: none;
-  }
-
-  .navigation .anchor,
-  .navigation input[type=text],
-  .navigation .search-container button .sun {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-
-  .navigation input[type=text] {
-    border: 1px solid #ccc;
-  }
-}
-
-.button-solid {
-  border: none;
-}
-
-button-solid:focus {
-  border: none;
-  outline: none;
-}
-
-div.scrollmenu {
-  background-color: #333;
-  overflow: auto;
-  white-space: ;
-  display: flex;
-  background-image: url("backmus.gif");
-  background-repeat: repeat;
-  background-position: ;
-}
-
-div.scrollmenu anchor {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-}
-
-div.scrollmenu anchor:hover {
-  background-color: #777;
-}
-
-.trend {
-  margin-top: 20px;
-  width: 1488px;
-  height: 420px;
-  padding: 0px;
-  border-radius: ;
-  display: flex;
-}
-
-
-.slides {
-  width: 800px;
-  height: 420px;
-  display: inline-block;
-  margin-left: 320px;
-  cursor: pointer;
-  border-radius: 15px;
-}
 
 /* login */
 
@@ -287,35 +72,36 @@ span.psw {
   /* Stay in place */
   z-index: 100;
   /* Sit on top */
-  left: 0;
+  right:0px;
   top: 0;
   width: 100%;
   /* Full width */
   height: 100%;
   /* Full height */
   overflow: Enable;
-  /* Enable scroll if needed */
-  background-color: yellow;
-  /* Fallback color */
-  background-color: black;
-  /*  Black w/ opacity */
+  background-image: url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
   padding-top: 60px;
-  background-repeat: no-repeat;
-  background-size: 1130px 743px;
-  background-position: 0% -45%;
 }
 
 
 
 /* model Content/Box */
 .model-content {
-  background-color: #21252d;
-  margin: 5% auto 15% auto;
+  /* background-color: #21252d; */
+  background-color: rgba(33, 37, 45, 0.5);
+  margin: 7% 0% auto 55%;
   /*5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 30%;
   /* Could be more or less, depending on screen size */
-  height: 61.5%;
+  height: 58%;
   border-radius: 20px 20px 20px 20px;
 }
 
