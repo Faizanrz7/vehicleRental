@@ -9,15 +9,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" -->
-  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-  <!-- <script src="rentnow.js"></script> -->
-  <!------ Include the above in your HEAD tag ---------->
-  
-=======
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -27,7 +18,6 @@
   <script src="rentnow.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
   <!-- 
     Info: Booking Form
     Description: Brand new customer adds a car / new car to their account.
@@ -35,20 +25,11 @@
     Forked from Andi: http://codepen.io/andiio/pen/tFECp
     font: Lato (google font)
     Icon font:   http://fontawesome.io/icons/
-<<<<<<< HEAD
-    
-    ================================= -->
-    <link href="/css/rentnow.css" rel="stylesheet" type="text/css" />
-    <form id = "rent" action="">
-      <!--  General -->
-      <div class="form-group">
-=======
 
 ================================= -->
   <form action="">
     <!--  General -->
     <div class="form-group">
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
       <center>
         <h1><u class="thick" style="font-family: Blackadder ITC; font-size:4em;">Rent Now</u></h1>
       </center>
@@ -58,10 +39,6 @@
       <h2 class="heading">Owner Details</h2>
       <div class="controls">
         <input type="text" id="name" placeholder="Name" lass="floatLabel" name="name">
-<<<<<<< HEAD
-        <input type="hidden" id="userId" placeholder="Name" lass="floatLabel" name="name">
-=======
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
       </div>
       <div class="controls">
         <input type="text" id="email" placeholder="Email" class="floatLabel" name="email">
@@ -135,8 +112,6 @@
       <!--End Grid-->
       <br>
 
-<<<<<<< HEAD
-=======
       <div class="grid">
         <!--Start Grid-->
         <div class="col-1-3" style="width:320px;">
@@ -159,12 +134,10 @@
       </div>
       <!--End Grid-->
       <br>
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
       <div class="grid">
         <!--Start Grid-->
         <div class="col-1-3" style="width:320px;">
           <div class="controls" style="width:320px;">
-<<<<<<< HEAD
             <input type="text" id="aadhar" placeholder="Aadhar Number" class="floatLabel" name="aadhar"
               pattern="\d{4}-\d{4}-\d{4}" maxlength="19" required>
             <!-- <label for="carmodel">Car Model</label> -->
@@ -200,7 +173,6 @@
             <!-- <label for="something">Something</label> -->
           </div>
         </div> -->
-=======
             <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
             <!-- <label for="carmodel">Car Model</label> -->
           </div>
@@ -214,81 +186,18 @@
             <!-- <label for="something">Something</label> -->
           </div>
         </div>
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
       </div>
 
     </div>
     <div class="grid">
     </div>
     <div class="wrap">
-<<<<<<< HEAD
-      <!-- <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a> -->
-      <button class="btn" type="submit" value="Submit">Submit</button>
-=======
       <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a>
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
     </div>
     </div>
     </div> <!-- /.form-group -->
 
   </form>
-<<<<<<< HEAD
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
-<script>
-  window.onload =  async (e) => {
-    var userDetails = await fetch("../getUserDetails");
-    userDetails = await userDetails.json();
-    // console.log(userDetails);
-    populateData(userDetails.data);
-  }
-
-
-  function populateData(user){
-    console.log(user);
-
-    // var name = document.getElementById('name');
-    // name.value = user.username;
-
-    var name = document.getElementById('email');
-    name.value = user.username;
-
-    var name = document.getElementById('phone');
-    name.value = user.Mobile;
-    
-    var userId = document.getElementById('userId');
-    name.value = user._id;
-  }
-
-
-   var df = document.getElementById("rent");
-    df.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var name = document.getElementById("name").value;
-      // var userId =  document.getElementById("name").value;
-      
-      var street =  document.getElementById("street").value;
-      var streetNumber =  document.getElementById("street-number").value;
-      var city =  document.getElementById("city").value;
-      var postCode =  document.getElementById("post-code").value;
-      var country =  document.getElementById("country").value;
-      
-      // var email = document.getElementById("email").value;
-      $.ajax({
-        type: "POST",
-        url: window.location.href,
-        dataType: "json",
-        data: { name: name, street: street, streetNumber : streetNumber, city: city,postCode:postCode,country:country },
-        success: function (data) {
-          console.log(data);
-        },
-      });
-      
-    });
-</script>
-=======
-</body>
-
->>>>>>> fe443443cd1df4ed30fbf8421747e94b6d1d10d7
 </html>
