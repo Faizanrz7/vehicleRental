@@ -114,9 +114,11 @@ app.post("/signup", async (req, res) => {
 
 const indexRouter = require("./routes/index");
 const carRouter = require("./routes/carRoutes");
+const bikeRouter = require("./routes/bikeRoute");
 
 app.use("/", indexRouter);
 app.use("/cars", carRouter);
+app.use("/bikes", bikeRouter);
 
 app.get("/dashboard", (req, res) => {
   //   res.render("dashboard.ejs", { name: req.user.name });
@@ -155,6 +157,24 @@ app.get("/getUserDetails", async (req, res) => {
     res.status(200).send({ data: User });
   } catch (error) {
     console.log(error.message);
+  }
+});
+
+app.get("/order/:id", async (req, res) => {
+  const vehicleId = req.params.id;
+  const userId = req.user;
+
+  try {
+    const newOrder = new OrderedBulkOperation({
+      vehicleId: vehicleId,
+      userId: userId,
+      cost: req.body.cost,
+    });
+    await newOrder.save();
+  } catch (error) {
+    res
+      .status(400)
+      .send({ message: "Error occured during order", error: error.message });
   }
 });
 

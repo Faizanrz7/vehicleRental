@@ -5,11 +5,7 @@ const CarsSchema = mongoose.Schema({
   Description: String,
   Price: Number,
   Seats: Number,
-  images: [
-    {
-      link: String,
-    },
-  ],
+  images: Array,
 });
 
 module.exports = mongoose.model("cars", CarsSchema);
