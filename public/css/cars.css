@@ -28,7 +28,7 @@ body {
   color: red;
 }
 
-.navbar-nav > li {
+.navbar-nav>li {
   margin-left: 5px;
   padding-left: 20px;
 } */
@@ -62,6 +62,7 @@ body {
 .avail-col {
   display: flex;
   justify-content: space-between;
+
 }
 
 select,
@@ -89,8 +90,9 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   opacity: 0.5;
 }
 
+
 button {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -115,6 +117,10 @@ label {
   padding-left: 130px;
   padding-right: 130px;
   padding-bottom: 50px;
+}
+
+.color-circle {
+  border: 1px solid;
 }
 
 .card-row {
@@ -149,6 +155,8 @@ img {
 
 .card-body {
   padding: 20px;
+
+
 }
 
 .card-title {
@@ -228,9 +236,6 @@ img {
 
 /* carousel*/
 
-#myDIV {
-  display: flex;
-}
 .mySlides {
   display: none;
 }

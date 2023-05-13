@@ -123,6 +123,7 @@
       margin-bottom: 20px;
       border-style: none;
     }
+
     .a-hover:hover{
       color:red;
     }
@@ -130,10 +131,10 @@
 </head>
 
 <body>
-  <!-- <script src="cars.js"></script> -->
+  <script src="bikes.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="/css/cars.css" rel="stylesheet" type="text/css" />
+  <link href="css/cars.css" rel="stylesheet" type="text/css" />
 
 
   <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -156,17 +157,17 @@
             VEHICLES
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="cars.html">Cars</a>
-            <a class="dropdown-item" href="bikes.html">Bikes</a>
-            <a class="dropdown-item" href="buses.html">Buses</a>
+            <a class="dropdown-item" href="cars/cars.html">Cars</a>
+            <a class="dropdown-item" href="">Bikes</a>
+            <a class="dropdown-item" href="buses/buses.html">Buses</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" id="imp" href="about.html">ABOUT</a>
+          <a class="nav-link" id="imp" href="#">ABOUT</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" id="imp" href="contact.html">CONTACT US</a>
+          <a class="nav-link" id="imp" href="#">CONTACT US</a>
         </li>
 
       </ul>
@@ -183,7 +184,7 @@
             <li><a href="#" id="imp" class="a-hover">About</a></li>
             <li><a href="#" id="imp" class="a-hover">Skills</a></li>
             <li><a href="#" style="position:relative;" class="a-hover">Vehicles &dtrif;</a>
-              <ul class="dropdown" style="position:absolute;left:47%;">
+              <ul class="dropdown" style="position:absolute;left:75%;">
                 <li style="margin:0px;"><a href="#">Bikes</a></li>
                 <li style="margin:0px;"><a href="#">Cars</a></li>
                 <li style="margin:0px;"><a href="#">Buses</a></li>
@@ -197,9 +198,11 @@
         </div> -->
     </nav>
 </header>
+
+
   <!-- date box -->
 
-  <br>
+  <!-- <br>
   <div class="back-img">
     <div class="container">
       <div class="pickup-date-container">
@@ -224,9 +227,9 @@
         <input type="datetime-local" id="dropDateTime" name="dropDateTime" placeholder="Drop Date-Time">
       </div>
 
-      <button type="button" onclick="myFunction()">Find Car</button>
+      <button type="button" onclick="myFunction()">Find Bike</button>
       <br><br>
-    </div>
+    </div> -->
 
     <br><br>
 
@@ -235,9 +238,449 @@
     </div>
     <!-- cards -->
 
-    <div id="myDIV">
-      <!--  -->
+    <div class="card-col" id="myDIV">
+      <div class="card-row">
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://images.hindustantimes.com/auto/img/2022/04/17/600x338/3-Ba-BMW_1626449662688_1650177061774.jpg"
+                    alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://www.livemint.com/lm-img/img/2023/03/28/600x338/2-0-1272577671-The-BMW-7-Series--1--0_1679601246762_1679987537331_1679987537331.jpg"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://hips.hearstapps.com/hmg-prod/images/2024-bmw-5-series-101-1676576715.jpg"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">BMW</h2>
+            <!-- <p class="card-text"> It is smaller and lighter than a traditional motorcycle, making it easier to handle
+              and maneuver in urban areas.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 4500</li>
+              <li><strong>Car Type:</strong> Luxury</li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <!-- <span class="star">&#9733;</span> -->
+                </div>
+
+              </li>
+            </ul>
+            <div class="rent-btn">
+              <a href="rentnow.html" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="car-detail2.html" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://d1lhv9gpjooyls.cloudfront.net/eyJvdXRwdXRGb3JtYXQiOiJqcGciLCJidWNrZXQiOiJ6YWxhLXByb2R1Y3Rpb24iLCJrZXkiOiJhY2NvdW50LTE5XC8xNjU4NDg5Mzc5Mzk3XzIyOTc5NzJcL2ltYWdlICgxKS5wbmciLCJlZGl0cyI6eyJyb3RhdGUiOm51bGwsInJlc2l6ZSI6eyJoZWlnaHQiOjEwODAsIndpZHRoIjoxMDgwLCJmaXQiOiJpbnNpZGUiLCJiYWNrZ3JvdW5kIjp7InIiOjI1NSwiZyI6MjU1LCJiIjoyNTUsImFscGhhIjoxfX0sImZsYXR0ZW4iOnsiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6bnVsbH19fX0="
+                    alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20220208104501_Audi_A4_LT_1.jpg"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPMUDWXQj6GFSzo5lXgdp42BevY_wGZKwASauiPUhwW0y3MwcPQgEUzJXu2vhKdESiDrg0XXq0V8&usqp=CAU&ec=48665699"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Audi</h2>
+            <!-- <p class="card-text"> The Hero Passion Pro is a popular commuter motorcycle in India. It is designed to be
+              stylish, fuel-efficient, and comfortable for daily commuting.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 2500</li>
+              <li><strong>Car Type:</strong> Luxury</li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+
+              </li>
+            </ul>
+            <div class="rent-btn">
+
+              <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn">View Details</a>
+
+              <a href="rentNow/`+car._id+`" class="btn">Rent Now</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="cars/carDetail/`+car._id+`" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://imgd.aeplcdn.com/0x0/n/cw/ec/107543/brezza-exterior-right-front-three-quarter-6.jpeg?isig=0" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20220706025905_Brezza_1.jpg&w=726&h=482&q=75&c=1"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://www.cartoq.com/wp-content/uploads/2022/07/all-new-maruti-brezza-black-edition-featured.jpg"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Brezza</h2>
+            <!-- <p class="card-text"> The Duke is known for its sporty and aggressive design, high-performance engine, and
+              advanced technology features.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 2000</li>
+              <li><strong>Car Type:</strong> Normal </li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+
+              </li>
+            </ul>
+            <div class="rent-btn">
+              <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      &nbsp;&nbsp;
+
+      <div class="card-row">
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://cdni.autocarindia.com/ExtraImages/20210218035907_Fortuner_off_road_tracking_.jpg"
+                    alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/44709/fortuner-exterior-left-front-three-quarter.jpeg?q=75"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/01/toyota-fortuner-1609933873.jpg"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Fortuner</h2>
+            <!-- <p class="card-text"> Speedy Cruiser, a sleek and stylish road bike perfect for zipping around the city.
+              With
+              a
+              lightweight frame and 700c wheels, this bike is fast and nimble.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 4500</li>
+              <li><strong>Car Type:</strong> Luxury</li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+
+              </li>
+            </ul>
+            <div class="rent-btn">
+              <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://images.carandbike.com/car-images/large/tata/nano/tata-nano.jpg?v=9"
+                    alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://5.imimg.com/data5/WH/XY/GLADMIN-49414777/tata-nano-car-1000x1000.jpg"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://imgd-ct.aeplcdn.com/664x415/ec/29/38/10441/img/l/Tata-Nano-left-rear-three-quarter-21097.jpg?v=201711021421&q=75"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Tata Nano</h2>
+            <!-- <p class="card-text"> Speedy Cruiser, a sleek and stylish road bike perfect for zipping around the city.
+              With
+              a
+              lightweight frame and 700c wheels, this bike is fast and nimble.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 1200</li>
+              <li><strong>Car Type:</strong> Normal</li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+
+              </li>
+            </ul>
+              <div class="rent-btn">
+                <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="btn">View Details</a>
+              </div>
+          
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="https://m.media-amazon.com/images/I/71FRI6a+JOL._SX679_.jpg"
+                    alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100"
+                    src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-160298,resizemode-1,msid-74316237/industry/auto/cars-uvs/new-grand-i10-nios-model-launched-price-specification-details-here.jpg"
+                    alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="https://www.financialexpress.com/wp-content/uploads/2017/02/Hyundai-Grand-i10-main-480.jpg?w=450"
+                    alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Hyundai i10</h2>
+            <!-- <p class="card-text"> Speedy Cruiser, a sleek and stylish road bike perfect for zipping around the city.
+              With
+              a
+              lightweight frame and 700c wheels, this bike is fast and nimble.</p> -->
+            <ul class="card-list">
+              <li><strong>Price per day:</strong> 1400</li>
+              <li><strong>Car Type:</strong> Normal</li>
+              <li class="avail-col"><strong>Available colors:</strong>
+                <div class="color-picker">
+                  <div class="color-circle" style="background-color: #000000;"></div>
+                  <div class="color-circle" style="background-color: #f54242;"></div>
+                  <div class="color-circle" style="background-color: #ffffff;"></div>
+                  <div class="color-circle" style="background-color: #696969;"></div>
+
+                </div>
+              </li>
+              <li class="avail-col"><strong>Rating:</strong>
+                <div class="rating">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                </div>
+
+              </li>
+            </ul>
+            <div class="rent-btn">
+              <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
     </div>
+
+
+
+
+
+
 
 
     <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
@@ -251,167 +694,5 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"></script>
 </body>
-<script>
-  // Add a hover effect to the card
-// const card = document.querySelector('.card');
-function mouseEnter(e) {
-  console.log(e);
-  e.style.transform = 'scale(1.05)';
-  e.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-}
-// card.addEventListener('mouseenter', () => {
-// });
 
-function mouseLeave (e) {
-  e.style.transform = 'scale(1)';
-  e.style.boxShadow = '0 0 5px rgba(0, 0, 0, 0.3)';
-};
-
-
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  }
-}
-window.onload = async (e) =>{
-  // alert("AAGYA")
-    let allCars = await fetch("cars/allCars");
-    allCars = await allCars.json();
-    // console.log(allCars)
-    createCardDiv(allCars);
-}
-
-// function getLinks(images) {
-//   let a = "";
-//   images.map((image, j) => {
-//     a += image.link + '\n';
-//   });
-
-//   return a;
-// }
-
-function createCardDiv(allCars) {
-  const cars = allCars.data;
-  console.log(cars);
-  let divi = "";
-  let div2 = "";
-  cars.map((car, i) => {
-    console.log(car);
-    var carouselIndicator = "";
-    var carousel = "";
-    car.images.map((image, j) => {
-      if(j == 0){
-        carouselIndicator += `<li data-target="#carouselExampleIndicators`+i+`" data-slide-to=`+j+` class="active"></li>\n`;
-        carousel += `<div class="carousel-item active"><img class="d-block w-100" src="`+image.link+`"</div>\n`;
-      }
-      else {
-        carouselIndicator += `<li data-target="#carouselExampleIndicators`+i+`" data-slide-to=`+j+`></li>\n`;
-        carousel += `<div class="carousel-item"><img class="d-block w-100" src="`+image.link+`"></div>\n`;
-      }
-    });
-    divi += `<div class="card" onmouseenter="mouseEnter(this)" onmouseleave ="mouseLeave(this)">
-          <div class="card-header">
-            <div id="carouselExampleIndicators`+i+`" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                `+carouselIndicator+`
-              </ol>
-              <div class="carousel-inner">`+carousel+`</div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators`+i+`" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators`+i+`" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">`+car.Name+`</h2>
-            <ul class="card-list">
-              <li><strong>Price per day:</strong> `+car.Price+`</li>
-              <li><strong>Bike Type:</strong> `+car.Type+ `</li>
-              <li class="avail-col"><strong>Available colors:</strong>
-                <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-                </div>
-              </li>
-              <li class="avail-col"><strong>Rating:</strong>
-                <div class="rating">
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                </div>
-
-              </li>
-            </ul>
-            <div class="rent-btn">
-              <a href="#" class="btn">Rent Now</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="car-detail.html" class="btn">View Details</a>
-            </div>
-          </div>
-        </div>`;
-
-        div2 += `<div class="card">
-          <div class="card-header">
-            <div id="carouselExampleIndicators`+i+`" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                `+carouselIndicator+`
-              </ol>
-              <div class="carousel-inner">
-                `+carousel+`
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators`+i+`" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators`+i+`" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">Audi</h2>
-            <!-- <p class="card-text"> The Hero Passion Pro is a popular commuter motorcycle in India. It is designed to be
-              stylish, fuel-efficient, and comfortable for daily commuting.</p> -->
-            <ul class="card-list">
-              <li><strong>Price per day:</strong> 3000</li>
-              <li><strong>Bike Type:</strong> Normal Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
-                <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-                </div>
-              </li>
-              <li class="avail-col"><strong>Rating:</strong>
-                <div class="rating">
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                </div>
-
-              </li>
-            </ul>
-            <div class="rent-btn">
-              <a href="rentNow/`+car._id+`" class="btn">Rent Now</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="cars/carDetail/`+car._id+`" class="btn">View Details</a>
-            </div>
-          </div>
-        </div>
-        </div>`;
-  });
-  $("#myDIV").html(div2);
-}
-</script>
 </html>
