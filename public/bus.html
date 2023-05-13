@@ -5,6 +5,129 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-image: url('/img/1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100dvh;
+    }
+
+    /*nav */
+    header {
+        background-color: #19253b59;
+        box-shadow: 0 0 36px 0;
+        backdrop-filter: blur(3px);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 80%;
+        margin: auto;
+        padding: 1.2rem 0rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
+    .logo a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding: 0;
+        background-color: transparent;
+        overflow: hidden;
+    }
+
+    li {
+        padding: 0rem 1.1rem;
+        float: left;
+    }
+
+    li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: .7px;
+    }
+
+    li a:hover {
+        color: #91b2ff;
+        transition: all .3s ease-in-out
+    }
+
+    .button {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .button button {
+        font-weight: 500;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: transparent;
+        padding: .5rem 1rem;
+        border-radius: 20%;
+        cursor: pointer;
+    }
+
+    .button button:hover {
+        background-color: #fff;
+        color: #152939;
+        transition: all .3s ease-in-out;
+    }
+
+       ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      padding-left: 0;
+      left: 0;
+      display: none;
+      }
+
+    ul li:hover > ul,
+    ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      min-width: 150px;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 0px 3px 5px -1px #ccc;
+    }
+
+    ul li ul li {
+      clear: both;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 20px;
+      border-style: none;
+    }
+
+    .a-hover:hover{
+      color:red;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,7 +137,7 @@
   <link href="css/bus.css" rel="stylesheet" type="text/css" />
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Vehicle Rental</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,9 +172,32 @@
 
       </ul>
     </div>
-  </nav>
+  </nav> -->
 
-
+  <header>
+    <nav style="display: flex;flex-direction: row;">
+        <div class="logo">
+            <a href="index.html" class="a-hover">Voyage</a>
+        </div>
+        <ul>
+            <li><a href="#" id="imp" class="active a-hover">Home</a></li>
+            <li><a href="#" id="imp" class="a-hover">About</a></li>
+            <li><a href="#" id="imp" class="a-hover">Skills</a></li>
+            <li><a href="#" style="position:relative;" class="a-hover">Vehicles &dtrif;</a>
+              <ul class="dropdown" style="position:absolute;left:75%;">
+                <li style="margin:0px;"><a href="#">Bikes</a></li>
+                <li style="margin:0px;"><a href="#">Cars</a></li>
+                <li style="margin:0px;"><a href="#">Buses</a></li>
+              </ul>
+            </li>
+            <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+        </ul>
+        <!-- <div class="button">
+            <a id="imp" href="signup.html"><button>Sign Up</button></a>
+            <a id="imp" href="signin.html"><button>Log In</button></a>
+        </div> -->
+    </nav>
+</header>
   <!-- date box -->
 
   <br>
