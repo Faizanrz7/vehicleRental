@@ -60,7 +60,7 @@
       window.onload = async function () {
         let carDetails = await fetch(`/cars/carD/${carId}`);
         carDetails = await carDetails.json();
-        console.log(carDetails);
+        // console.log("Car", carDetails);
         createDesign(carDetails);
         showSlides();
       };
@@ -133,7 +133,9 @@
                   background-image: url('https://img.icons8.com/?size=512&id=12776&format=png');
                 "
               ></span>
-              <p class="car-feature-text">2020</p>
+              <p class="car-feature-text">` +
+          carDetail.Date +
+          `</p>
             </div>
             <br />
             <div class="rows">
@@ -151,7 +153,9 @@
                   background-image: url('https://img.icons8.com/?size=512&id=ltQtrH63i0Uf&format=png');
                 "
               ></span>
-              <p class="car-feature-text">20</p>
+              <p class="car-feature-text">` +
+          carDetail.Mileage +
+          `</p>
             </div>
             <br />
             <div class="rows">
@@ -172,10 +176,14 @@
               <h3>Cost per day</h3>
             </div>
             <!-- <div class="rows">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>With Driver:- 5000</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>With Driver:- ` +
+          carDetail.priceD +
+          `</p>
           </div>
           <div class="rows">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Without Driver:- 4000</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Without Driver:- ` +
+          carDetail.price +
+          `</p>
           </div> -->
             <div class="rows">
               <span

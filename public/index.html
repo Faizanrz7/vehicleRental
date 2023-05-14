@@ -296,7 +296,6 @@
         }
       };
       window.onload = async function isAuthenticated() {
-        console.log(5);
         let yesNo = await fetch("http://localhost:3001/isAuthenticated");
         yesNo = await yesNo.json();
         let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
@@ -313,7 +312,8 @@
         logout = await logout.json();
         console.log(logout.message);
         if (logout.message === "User logged Out") {
-          window.location.reload;
+          alert("User Logged Out Successfully");
+          window.location.reload();
         } else {
           alert(logout.message);
         }
