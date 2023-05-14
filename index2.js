@@ -13,7 +13,7 @@ const UserModel = require("./models/user");
 const OrderModel = require("./models/order");
 const CarModel = require("./models/cars");
 const BikeModel = require("./models/bikes");
-const BusModel = require("./models/buses");
+// const BusModel = require("./models/buses");
 // require("")
 const cors = require("cors");
 
@@ -307,18 +307,16 @@ app.get("/logout", (req, res) => {
   });
 });
 
-
 // const favicon = require('serve-favicon');
 // const express = require('express')
 // const app = express()
-  
+
 // Returns a middleware to serve favicon
 // app.use(favicon(__dirname + '/public/favicon.ico'));
 // app.use (favicon (path.join(__dirname, '/public', 'favicon.ico')));
-  
-// API endpoint to serve index 
-// app.get('/', (_, res)=> res.sendFile(__dirname + '/index.html'));
 
+// API endpoint to serve index
+// app.get('/', (_, res)=> res.sendFile(__dirname + '/index.html'));
 
 // var favicon = require('serve-favicon');
 
