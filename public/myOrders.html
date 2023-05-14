@@ -244,6 +244,7 @@
           <table id="myTable" class="table table-striped table-dark">
             <thead>
               <tr>
+                <th scope="col">#</th>
                 <th scope="col">Order Id</th>
                 <th scope="col">Vehicle Name</th>
                 <th scope="col">Cost</th>
@@ -307,13 +308,14 @@
         // tableBody.append(
         //   $()
         // );
-
-        div += `<tr>
+        if (order.Status === "Success") {
+          div += `<tr>
             <th scope="row">${i + 1}</th>
                                 <td>${order._id}</td>
                                 <td>${order.vehicleId.Name}</td>
                                 <td>${order.cost}</td>
           </tr>`;
+        }
       });
 
       $("#mytbody").html(div);

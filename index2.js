@@ -11,6 +11,9 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const UserModel = require("./models/user");
 const OrderModel = require("./models/order");
+const CarModel = require("./models/cars");
+const BikeModel = require("./models/bikes");
+const BusModel = require("./models/buses");
 // require("")
 const cors = require("cors");
 
@@ -185,16 +188,62 @@ app.get("/isAuthenticated", (req, res) => {
   else return res.status(200).send({ message: "no" });
 });
 
+const Razorpay = require("razorpay");
+var instance = new Razorpay({
+  key_id: "rzp_test_nSXJj85corDzDt",
+  key_secret: "70mT1FHBO7ZNPx3eACRC32H1",
+});
+
 app.post("/createOrder", async (req, res) => {
   try {
-    console.log(req.user);
-    const newOrder = new OrderModel({
-      userId: req.user,
-      vehicleId: req.body.vehicleId,
-      cost: req.body.cost,
+    // console.log(req.body);
+    // console.log(req.user);
+
+    const User = await UserModel.find({ _id: req.user });
+    console.log("USer", User.Name === undefined);
+    if (User.Name === undefined) {
+      console.log("finda and update");
+      try {
+        const updateUser = await UserModel.findOneAndUpdate(
+          { _id: req.user },
+          {
+            Aadhar: req.body.Aadhar,
+            Pan: req.body.Pan,
+            Address: {
+              Street: req.body.Street,
+              StreetNumber: req.body.StreetNumber,
+              PostCode: req.body.PostCode,
+              City: req.body.City,
+              Country: req.body.Country,
+            },
+          },
+          {
+            new: true,
+          }
+        );
+        // await updateUser.save();
+        console.log(updateUser);
+      } catch (error) {
+        console.log("Update User", error.message);
+      }
+    }
+    var options = {
+      amount: parseInt(req.body.Cost) * 100, // amount in the smallest currency unit
+      currency: "INR",
+      receipt: "order_rcptid_11",
+    };
+    instance.orders.create(options, async function (err, order) {
+      // console.log(order);
+      const newOrder = new OrderModel({
+        userId: req.user,
+        vehicleId: req.body.vehicleId,
+        cost: req.body.Cost,
+        razorPayId: order.id,
+        Status: "Failed",
+      });
+      await newOrder.save();
+      res.status(200).send({ order: order, orderDb: newOrder });
     });
-    await newOrder.save();
-    res.status(200).send({ order: newOrder });
   } catch (error) {
     res.send({ message: "Creating Order failed", err: error.message });
   }
@@ -206,11 +255,46 @@ app.get("/getMyOrders", async (req, res) => {
       .populate({ path: "userId" })
       .exec();
 
+    console.log(orders);
     res.status(200).send({ orders: orders });
   } catch (error) {
     res
       .status(200)
       .send({ message: "Order fetching error", err: error.message });
+  }
+});
+
+app.post("/updateOrderStatus/:orderId", async (req, res) => {
+  try {
+    const updateOrder = await OrderModel.findOneAndUpdate(
+      { _id: req.params.orderId },
+      {
+        Status: "Success",
+      },
+      {
+        new: true,
+      }
+    );
+    res.sendFile(path.join(__dirname + "/public/success.html"));
+  } catch (error) {
+    console.log("Update Order Status", error.message);
+  }
+});
+
+app.get("/getDetails/:vehicleId", async (req, res) => {
+  try {
+    let vehicleData = await CarModel.findOne({ _id: req.params.vehicleId });
+    console.log(vehicleData === null);
+    if (vehicleData === null)
+      vehicleData = await BikeModel.findOne({ _id: req.params.vehicleId });
+    if (vehicleData === null)
+      vehicleData = await BusModel.findOne({ _id: req.params.vehicleId });
+
+    const userData = await UserModel.findOne({ _id: req.user });
+    // console.log(userData);
+    res.status(200).json({ vehicleData: vehicleData, userData: userData });
+  } catch (error) {
+    console.log(error.message);
   }
 });
 app.get("/logout", (req, res) => {

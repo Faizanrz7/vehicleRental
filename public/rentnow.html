@@ -15,7 +15,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <link href="/css/rentnow.css" rel="stylesheet" type="text/css" />
-  <script src="/rentnow.js"></script>
+  <script defer src="/rentnow.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
   <!-- 
@@ -27,7 +27,7 @@
     Icon font:   http://fontawesome.io/icons/
 
 ================================= -->
-  <form action="">
+  <form id="paymentForm" >
     <!--  General -->
     <div class="form-group">
       <center>
@@ -41,11 +41,11 @@
         <input type="text" id="name" placeholder="Name" lass="floatLabel" name="name">
       </div>
       <div class="controls">
-        <input type="text" id="email" placeholder="Email" class="floatLabel" name="email">
+        <input type="text" id="email" placeholder="Email" class="floatLabel" name="email" readonly>
         <!-- <label for="email">Email</label> -->
       </div>
       <div class="controls">
-        <input type="tel" id="phone" placeholder="Phone" class="floatLabel" name="phone">
+        <input type="tel" id="phone" placeholder="Phone" class="floatLabel" name="phone" readonly>
         <!-- <label for="phone">Phone</label> -->
       </div>
       <div class="grid">
@@ -105,7 +105,6 @@
             <div class="controls" style="padding-left:58px;">
               <input type="text" id="regno" class="floatLabel" placeholder="License Number" name="carmodel"
                 style=" display:none;width:400px;height:45px;">
-            </div>
           </div>
         </div>
       </div>
@@ -164,10 +163,10 @@
       <div class="container">
         <div class="img-container">
           <div class="v-name">
-            <h2> Vehicle-name </h2>
+            <h2 id = "vname"> Vehicle-name </h2>
           </div>
           <div class="v-img">
-            <img
+            <img id = "vimage"
               src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80">
           </div>
         </div>
@@ -185,15 +184,15 @@
           </div>
           <div class="days-count" style="justify-content: center;">
             <label for="count">Number of Days</label>&emsp;&emsp;&emsp;
-            <input type="text" id="count" name="count" placeholder="days">
+            <input type="text" id="count" name="count" placeholder="days" readonly>
           </div>
           <div class="price" style="justify-content: center;">
             <label for="v-price">Price per Day</label>&emsp;&emsp;&emsp;&emsp;&nbsp;
-            <input type="text" id="v-price" placeholder="Price">
+            <input type="text" id="v-price" placeholder="Price" readonly>
           </div>
           <div class="total" style="justify-content: center;">
             <label for="total">Total Cost</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="result" placeholder="Total Cost">
+            <input type="text" id="result" placeholder="Total Cost" readonly>
           </div>
 
         </div>
@@ -201,11 +200,151 @@
 
     </div>
     <div class="wrap">
-      <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a>
+      <button class="btn" type="submit" >Submit</button>
+      <!-- <button class="button1" type="submit">Login</button> -->
     </div>
     </div>
     </div> <!-- /.form-group -->
   </form>
 </body>
 
+<script>
+  function getCurrentURL() {
+        return window.location.href;
+      }
+
+      // Example
+      // const url = getCurrentURL();
+      // console.log(url.substring(url.lastIndexOf("/") + 1));
+      // let vehicleId = url.substring(url.lastIndexOf("/") + 1);
+
+      let orderId;
+      let orderDb;
+      let price =document.getElementById('v-price');
+      let result =document.getElementById('result');
+      let vimage = document.getElementById('vimage');
+      let vname = document.getElementById('vname');
+      let email = document.getElementById('email');
+      let phone = document.getElementById('phone');
+      let name = document.getElementById('street');
+      let street = document.getElementById('street-number');
+      let streetNumber = document.getElementById('street-number');
+      let postCode = document.getElementById('post-code');
+      let country = document.getElementById('country');
+      let aadhar = document.getElementById('aadhar');
+      let pancard = document.getElementById('pancard');
+      let count = document.getElementById('count');
+
+      let paymentForm = document.getElementById('paymentForm');
+      window.onload = async () => {
+        const url = getCurrentURL();
+        let vehicleId = url.substring(url.lastIndexOf("/") + 1);
+
+        let data = await fetch(`http://localhost:3001/getDetails/${vehicleId}`);
+        data = await data.json();
+        console.log(data)
+
+        price.value = data.vehicleData.Price;
+
+        vimage.src = data.vehicleData.images[0];
+
+        vname.textContent = data.vehicleData.Name;
+
+        email.value = data.userData.username;
+        
+        phone.value = data.userData.Mobile;
+        let userData = data.userData;
+
+        let options;
+        if(userData.Name){
+          name.value = userData.Name;
+          street.value = userData.Address.Street;
+          streetNumber.value =userData.Address.StreetNumber;
+          city.value= userData.Address.City;
+          postCode.value= userData.Address.PostCode;
+          country.value= userData.Address.Country;
+          aadhar.value = userData.Aadhar;
+          pancard.value = userData.Pan;
+        }
+        // else {
+        //   console.log("Name does not exist")
+        // } 
+      }
+
+      paymentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      // // var pass = document.getElementById("psw").value;
+      
+      // var email = document.getElementById("email").value;
+
+      if(name.value === "" || count == ""){
+        alert("Fill all the details");
+        return;
+      }
+
+    options = {
+        key: "rzp_test_nSXJj85corDzDt", // Enter the Key ID generated from the Dashboard
+        amount: parseInt(result.value)*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Voyage Ltd",
+        description: "Test Transaction",
+        image: "https://example.com/your_logo",
+        order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        callback_url: `http://localhost:3001/success.html`,
+        prefill: {
+          name: name.value,
+          email: email.value,
+          contact: phone.value,
+        },
+        notes: {
+          address: "Moahali",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:3001/createOrder",
+        dataType: "json",
+        data: { Name: name.value, Street: street.value, StreetNumber : streetNumber.value, City : city.value, PostCode : postCode.value, Country: country.value, Aadhar : aadhar.value, Pan: pancard.value, Cost:result.value, vehicleId  : window.location.href.substring(window.location.href.lastIndexOf("/") + 1)},
+        success: function (data) {
+          console.log(data);
+          orderId = data.order.id;
+          orderDb = data.orderDb._id;
+          options.callback_url = `http://localhost:3001/updateOrderStatus/${orderDb}`;
+          console.log(options.callback_url);
+          var rzp1 = new Razorpay(options);
+          // openRazorPay(orderId);
+          
+          console.log((parseInt(result.value)*100))
+          // options.amount = parseInt(result.value)*100;
+          rzp1.open();
+
+
+          // if (data.message === "Success") {
+          //   alert("Signed In")
+          //   window.location = document.referrer;
+          // //   window.location = "./signin.html";
+          // } else {
+          //   alert("Login Failed, Please try again");
+          // }
+        },
+      });
+      console.log("agasdg");
+    });
+</script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  
+  // var rzp1 = new Razorpay(options);
+  // document.getElementById("paymentForm").onclick = function (e) {
+    function openRazorPay(order) {
+      console.log((parseInt(result.value)*100))
+      options.amount = parseInt(result.value)*100;
+      rzp1.open();
+    // e.preventDefault();
+  };
+</script>
 </html>
