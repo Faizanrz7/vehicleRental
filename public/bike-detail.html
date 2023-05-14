@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Car Details</title>
+    <title>Voyage</title>
     <link rel="stylesheet" href="/css/bike-detail.css" />
     <style>
       * {
@@ -11,11 +11,21 @@
         font-family: "Poppins", sans-serif;
       }
 
+      /* body{
+        background-image: url("https://i.pinimg.com/736x/55/99/ca/5599ca80d9eb5a006e799683970b6233.jpg");
+      } */
       header {
         background-color: #19253b59;
         box-shadow: 0 0 36px 0;
         backdrop-filter: blur(3px);
+        /* background-color:; */
+        background-image: url("https://thumbs.dreamstime.com/b/water-drop-23006926.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
       }
+
       nav {
         display: flex;
         justify-content: space-between;
@@ -115,6 +125,13 @@
       .a-hover:hover {
         color: red;
       }
+
+      .title-header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
     </style>
   </head>
 
@@ -126,7 +143,7 @@
         </div>
         <ul>
           <li>
-            <a href="/index.html" id="imp" class="active a-hover">Home</a>
+            <a href="index.html" id="imp" class="a-hover">Home</a>
           </li>
           <li><a href="#" id="imp" class="a-hover">About</a></li>
           <li><a href="#" id="imp" class="a-hover">Skills</a></li>
@@ -134,7 +151,7 @@
             <a href="#" style="position: relative" class="a-hover"
               >Vehicles &dtrif;</a
             >
-            <ul class="dropdown" style="position: absolute; left: 47%">
+            <ul class="dropdown" style="position: absolute; left: 49%;background-color: black;color:white;">
               <li style="margin: 0px"><a href="/bikes.html">Bikes</a></li>
               <li style="margin: 0px"><a href="/cars.html">Cars</a></li>
               <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
@@ -143,12 +160,15 @@
           <li><a href="#" id="imp" class="a-hover">Contact</a></li>
         </ul>
         <div class="button" id="loginSignup">
-          <a id="imp" href="/signup.html"><button>Sign Up</button></a>
-          <a id="imp" href="/signin.html"><button>Log In</button></a>
+          <a id="imp" href="signup.html"><button>Sign Up</button></a>
+          <a id="imp" href="signin.html"><button>Log In</button></a>
         </div>
       </nav>
     </header>
-    <div class="container" style="width:90em0;">
+    <div class="title-header">
+      <h1>Bike Details</h1>
+    </div>
+    <div class="container" style="width: 50em; height: 1vw; margin-top:3em">
       <div class="slideshow-container">
         <!-- <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
@@ -184,7 +204,7 @@
         <h2>Bike : XYZ</h2>
         <p id="description">4 54 54</p>
 
-        <h2 style="margin-bottom: 0px">Bike Features :-</h2>
+        <h2 style="margin-bottom: 0px; margin-top: 20px">Bike Features :-</h2>
         <div class="features-row">
           <div class="car-features">
             <div class="rows">
@@ -285,7 +305,7 @@
             src="` +
           bikeDetail.images[0] +
           `"
-            style="width: 100%"
+            style="width: 53em;height:26em;object-fit:cover; "
           />
         </div>
 
@@ -295,7 +315,7 @@
             src="` +
           bikeDetail.images[1] +
           `"
-            style="width: 100%"
+            style="width: 53em; height:26em;object-fit:cover;"
           />
         </div>
 
@@ -305,7 +325,7 @@
             src="` +
           bikeDetail.images[02] +
           `"
-            style="width: 100%"
+          style="width: 53em; height:26em;object-fit:cover;"
           />
         </div>
 

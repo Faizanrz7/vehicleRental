@@ -85,18 +85,17 @@
     margin: 0;
   }
 
-  header {
+  /* header {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
-  }
+  } */
 
   .container {
     display: flex;
     flex-direction: row;
     margin: 20px;
-
   }
 
   /* .carousel {
@@ -112,7 +111,7 @@
   } */
 
   .details {
-    margin-left: 20px;
+    margin-left: 15px;
   }
 
   .details h2 {
@@ -122,6 +121,10 @@
   .details p {
     font-size: 18px;
     line-height: 1.5;
+  }
+
+  .details > p{
+    width:600px;
   }
 
   .details ul {
