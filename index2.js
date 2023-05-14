@@ -222,3 +222,30 @@ app.get("/logout", (req, res) => {
     res.status(200).send({ message: "User logged Out" });
   });
 });
+
+
+// const favicon = require('serve-favicon');
+// const express = require('express')
+// const app = express()
+  
+// Returns a middleware to serve favicon
+// app.use(favicon(__dirname + '/public/favicon.ico'));
+// app.use (favicon (path.join(__dirname, '/public', 'favicon.ico')));
+  
+// API endpoint to serve index 
+// app.get('/', (_, res)=> res.sendFile(__dirname + '/index.html'));
+
+
+// var favicon = require('serve-favicon');
+
+// app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+// var express = require ('express');
+// var app = express ();
+// var favicon = require('serve-favicon');
+// var path = require ('path');
+// app.use (favicon (path.join(__dirname, '/public', 'favicon.ico')));
+// app.get('/', (req, res)=>{
+// res.send ('hello express');
+// });
+// app2.listen (3001);

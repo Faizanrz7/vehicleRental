@@ -85,12 +85,12 @@
     margin: 0;
   }
 
-  header {
+  /* header {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
-  }
+  } */
 
   .container {
     display: flex;
