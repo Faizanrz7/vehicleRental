@@ -15,7 +15,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <link href="/css/rentnow.css" rel="stylesheet" type="text/css" />
-  <script src="rentnow.js"></script>
+  <script src="/rentnow.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
   <!-- 
@@ -102,7 +102,7 @@
           </div>
           <!-- </div> -->
           <div class="col-1-3">
-            <div class="controls" style="padding-left:70px;">
+            <div class="controls" style="padding-left:58px;">
               <input type="text" id="regno" class="floatLabel" placeholder="License Number" name="carmodel"
                 style=" display:none;width:400px;height:45px;">
             </div>
@@ -122,7 +122,7 @@
           </div>
         </div>
 
-        <div class="col-1-3" style="padding-left:15px;width:370px;">
+        <div class="col-1-3" style="padding-left:25px;width:370px;">
           <div class="controls">
             <div class="file-cont">
               <input type="file" id="upload-file" class="floatLabel" name="something">
@@ -138,47 +138,12 @@
         <!--Start Grid-->
         <div class="col-1-3" style="width:320px;">
           <div class="controls" style="width:320px;">
-            <input type="text" id="aadhar" placeholder="Aadhar Number" class="floatLabel" name="aadhar"
-              pattern="\d{4}-\d{4}-\d{4}" maxlength="19" required>
-            <!-- <label for="carmodel">Car Model</label> -->
-          </div>
-        </div>
-
-        <!-- <div class="col-1-3" style="padding-left:15px;width:370px;">
-          <div class="controls">
-            <div class="file-cont">
-              <input type="file" id="upload-file" class="floatLabel" name="something">
-              <!-- <label for="file-upload">Upload file</label> -->
-            </div>
-            <!-- <label for="something">Something</label> -->
-          </div>
-        </div> -->
-      </div>
-      <!--End Grid-->
-      <br>
-      <div class="grid">
-        <!--Start Grid-->
-        <div class="col-1-3" style="width:320px;">
-          <div class="controls" style="width:320px;">
             <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
             <!-- <label for="carmodel">Car Model</label> -->
           </div>
         </div>
 
-        <!-- <div class="col-1-3" style="padding-left:15px;">
-          <div class="controls">
-            <div class="file-cont">
-              <input type="file" id="upload-file" class="floatLabel" name="something">
-            </div>
-            <!-- <label for="something">Something</label> -->
-          </div>
-        </div> -->
-            <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
-            <!-- <label for="carmodel">Car Model</label> -->
-          </div>
-        </div>
-
-        <div class="col-1-3" style="padding-left:15px;">
+        <div class="col-1-3" style="padding-left:25px;">
           <div class="controls">
             <div class="file-cont">
               <input type="file" id="upload-file" class="floatLabel" name="something">
@@ -189,99 +154,57 @@
       </div>
 
     </div>
-    <div class="grid">
+    </div>
+    </div> <!-- /.form-group -->
+
+    <!-- payment details -->
+
+    <div class="form-group">
+      <h2 class="heading">Payment </h2>
+      <div class="container">
+        <div class="img-container">
+          <div class="v-name">
+            <h2> Vehicle-name </h2>
+          </div>
+          <div class="v-img">
+            <img
+              src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80">
+          </div>
+        </div>
+        <div class="data-container">
+          <div class="date-container">
+            <div class="pickup-date-container">
+              <label for="pickup-date">Pickup Date</label>
+              <input type="date" id="pickup-date" name="bookDateTime" placeholder="Book Date-Time">
+            </div>
+
+            <div class="pickup-date-container">
+              <label for="drop-date">Drop Date</label>
+              <input type="date" id="drop-date" name="dropDateTime" placeholder="Drop Date-Time">
+            </div>
+          </div>
+          <div class="days-count" style="justify-content: center;">
+            <label for="count">Number of Days</label>&emsp;&emsp;&emsp;
+            <input type="text" id="count" name="count" placeholder="days">
+          </div>
+          <div class="price" style="justify-content: center;">
+            <label for="v-price">Price per Day</label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+            <input type="text" id="v-price" placeholder="Price">
+          </div>
+          <div class="total" style="justify-content: center;">
+            <label for="total">Total Cost</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="result" placeholder="Total Cost">
+          </div>
+
+        </div>
+      </div>
+
     </div>
     <div class="wrap">
       <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a>
     </div>
     </div>
     </div> <!-- /.form-group -->
-
-
-
-
-
-
-
-    <div class="form-group">
-      <h2 class="heading">Documents </h2>
-
-      <div class="grid">
-        <div class="hide-cont">
-          <!--Start Grid-->
-          <div class="radio-cont" style="padding-left:40px;padding-top:11px;">
-            <br>
-            <label>
-              <input type="radio" name="textbox" value="show" onchange="showTextBox()"><span style="color:white;"> With
-                Driver</span>
-            </label>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <label>
-              <input type="radio" name="textbox" value="hide" onchange="hideTextBox()"> <span style="color:white;">
-                Without Driver</span>
-            </label>
-          </div>
-          <!-- </div> -->
-          <div class="col-1-3">
-            <div class="controls" style="padding-left:70px;">
-              <input type="text" id="regno" class="floatLabel" placeholder="License Number" name="carmodel"
-                style=" display:none;width:400px;height:45px;">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--End Grid-->
-      <br>
-
-      <div class="grid">
-        <!--Start Grid-->
-        <div class="col-1-3" style="width:320px;">
-          <div class="controls" style="width:320px;">
-            <input type="text" id="aadhar" placeholder="Aadhar Number" class="floatLabel" name="aadhar"
-              pattern="\d{4}-\d{4}-\d{4}" maxlength="19" required>
-            <!-- <label for="carmodel">Car Model</label> -->
-          </div>
-        </div>
-
-        <div class="col-1-3" style="padding-left:15px;width:370px;">
-          <div class="controls">
-            <div class="file-cont">
-              <input type="file" id="upload-file" class="floatLabel" name="something">
-              <!-- <label for="file-upload">Upload file</label> -->
-            </div>
-            <!-- <label for="something">Something</label> -->
-          </div>
-        </div>
-      </div>
-      <!--End Grid-->
-      <br>
-      <div class="grid">
-        <!--Start Grid-->
-        <div class="col-1-3" style="width:320px;">
-          <div class="controls" style="width:320px;">
-            <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
-            <!-- <label for="carmodel">Car Model</label> -->
-          </div>
-        </div>
-
-        <div class="col-1-3" style="padding-left:15px;">
-          <div class="controls">
-            <div class="file-cont">
-              <input type="file" id="upload-file" class="floatLabel" name="something">
-            </div>
-            <!-- <label for="something">Something</label> -->
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="grid">
-    </div>
-    <div class="wrap">
-      <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a>
-    </div>
-    </div>
-    </div> <!-- /.form-group -->   
   </form>
 </body>
 
