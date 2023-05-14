@@ -1,0 +1,129 @@
+/* html {
+    height: 100%;
+    width: 100%;
+  } */
+
+  .container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border:5px solid black;
+    width:75em;
+    height: 20vw;
+    margin-left:12%;
+    margin-right:10%;
+    padding-left:0px;
+}
+
+.img-container{
+    display:flex;
+    border:2px solid red;
+    width:30em;
+    height: 20vw;
+    margin: 0px;
+}
+
+.data-container{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        /* align-items: center; */
+        width: 45em;
+        max-width: 1000px;
+        height: 20vw;
+        margin: 0;
+        border: solid 1px yellow;
+        background-color: black;
+        /* border-radius: 15px; */
+        /* margin: 0px; */
+        box-sizing: border-box;
+        /* padding: 0px; */
+        /* left:0px; */
+}
+.date-container {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    height: 8vw;
+    margin: 0 auto;
+    border: solid 1px red;
+    background-color: black;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    padding-left: 5px; */
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    width: 40em;
+    max-width: 1000px;
+    height: 4vw;
+    /* background-color: black; */
+    /* border-radius: 15px; */
+    /* margin: 0px; */
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+
+  }
+  
+  .pickup-date-container,
+  .drop-date-container,
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
+  
+  .avail-col {
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  
+
+  .days-count,
+  .price{
+    left:0px;
+  }
+
+  select,
+  input[type="date"],
+  input[type="text"],
+  button {
+    height: 40px;
+    padding: 0 10px;
+    color: red;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: transparent;
+  }
+
+
+  
+  select {
+    width: 200px;
+  }
+  
+  /* input[type="date"] {
+    width: 200px;
+  } */
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.5;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: red;
+  }

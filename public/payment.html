@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Rental Checkout</title>
+    <link rel="stylesheet" href="/css/payment.css">
+  </head>
+  <body>
+    <div class="container">
+    <div class="img-container">
+
+    </div>
+    <div class="data-container">
+    <div class="date-container">
+        <div class="pickup-date-container">
+          <label for="pickup-date">Pickup Date</label>
+          <input type="date" id="pickup-date" name="bookDateTime" placeholder="Book Date-Time">
+        </div>
+        
+        <div class="pickup-date-container">
+          <label for="drop-date">Drop Date</label>
+          <input type="date" id="drop-date" name="dropDateTime" placeholder="Drop Date-Time">
+        </div>
+    </div>
+    <div class="days-count" style="margin-right:250px;">
+      <label for="count">Number of Days</label>&emsp;&emsp;&emsp;
+      <input type="text" id="count" name="count" placeholder="days">
+    </div>
+    <div class="price" style="margin-right:250px;">
+      <label for="v-price" >Price per Day</label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+      <input type="text" id="v-price" placeholder="Price">
+    </div>
+    <div class="total" style="margin-right:250px;">
+      <label for="total" >Total Cost</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" id="result" placeholder="Total Cost">
+    </div>
+       
+    </div>
+    </div>
+    <script src="payment.js"></script>
+  </body>
+</html>
+
