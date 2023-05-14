@@ -60,7 +60,7 @@
           console.log(data);
           if (data.message === "Success") {
             alert("Signed In")
-            window.location = "/index.html";
+            window.location = document.referrer;
           //   window.location = "./signin.html";
           } else {
             alert("Login Failed, Please try again");

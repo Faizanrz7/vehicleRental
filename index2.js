@@ -10,6 +10,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const UserModel = require("./models/user");
+const OrderModel = require("./models/order");
 // require("")
 const cors = require("cors");
 
@@ -184,6 +185,34 @@ app.get("/isAuthenticated", (req, res) => {
   else return res.status(200).send({ message: "no" });
 });
 
+app.post("/createOrder", async (req, res) => {
+  try {
+    console.log(req.user);
+    const newOrder = new OrderModel({
+      userId: req.user,
+      vehicleId: req.body.vehicleId,
+      cost: req.body.cost,
+    });
+    await newOrder.save();
+    res.status(200).send({ order: newOrder });
+  } catch (error) {
+    res.send({ message: "Creating Order failed", err: error.message });
+  }
+});
+app.get("/getMyOrders", async (req, res) => {
+  try {
+    const orders = await OrderModel.find({ userId: req.user })
+      .populate({ path: "vehicleId" })
+      .populate({ path: "userId" })
+      .exec();
+
+    res.status(200).send({ orders: orders });
+  } catch (error) {
+    res
+      .status(200)
+      .send({ message: "Order fetching error", err: error.message });
+  }
+});
 app.get("/logout", (req, res) => {
   console.log("Server logout");
   req.logOut((err) => {

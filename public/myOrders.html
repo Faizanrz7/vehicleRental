@@ -257,4 +257,38 @@
       </div>
     </div>
   </body>
+  <script>
+    window.onload = async () => {
+      // if authenticate then show
+      // else redirect to login pageXOffset
+
+      let isAuthenticated = await fetch(
+        "http://localhost:3001/isAuthenticated"
+      );
+      isAuthenticated = await isAuthenticated.json();
+
+      if (isAuthenticated.message === "yes") {
+        console.log("fecth and show");
+        let orders = await fetch("http://localhost:3001/getMyOrders");
+        orders = await orders.json();
+        createTable(orders);
+        console.log(orders);
+      } else {
+        window.location = "/signin.html";
+      }
+    };
+
+    function createTable(orders) {
+      for (order in orders) {
+        console.log(orders[order]);
+        // tableBody.append(createBookList(parseInt(book) + 1, books[book]));
+      }
+      // return $(`<tr>
+      //                           <th scope="row">${i}</th>
+      //                           <td>${book.bookname}</td>
+      //                           <td>${book.authorname}</td>
+      //                           <td>${book.category}</td>
+      //                   </tr>`);
+    }
+  </script>
 </html>

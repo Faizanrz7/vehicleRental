@@ -130,7 +130,7 @@
   </head>
 
   <body>
-    <script src="bikes.js"></script>
+    <!-- <script src="bikes.js"></script> -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -139,7 +139,7 @@
     />
     <link href="css/bikes.css" rel="stylesheet" type="text/css" />
 
-    <header>
+    <!-- <header>
       <nav style="display: flex; flex-direction: row">
         <div class="logo">
           <a href="#" class="a-hover">Voyage</a>
@@ -159,6 +159,36 @@
           </li>
           <li><a href="#" id="imp" class="a-hover">Contact</a></li>
         </ul>
+      </nav>
+    </header> -->
+
+    <header>
+      <nav style="display: flex; flex-direction: row">
+        <div class="logo">
+          <a href="#" class="a-hover">Voyage</a>
+        </div>
+        <ul>
+          <li>
+            <a href="/index.html" id="imp" class="active a-hover">Home</a>
+          </li>
+          <li><a href="#" id="imp" class="a-hover">About</a></li>
+          <li><a href="#" id="imp" class="a-hover">Skills</a></li>
+          <li>
+            <a href="#" style="position: relative" class="a-hover"
+              >Vehicles &dtrif;</a
+            >
+            <ul class="dropdown" style="position: absolute; left: 47%">
+              <li style="margin: 0px"><a href="/bikes.html">Bikes</a></li>
+              <li style="margin: 0px"><a href="/cars.html">Cars</a></li>
+              <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+        </ul>
+        <div class="button" id="loginSignup">
+          <a id="imp" href="signup.html"><button>Sign Up</button></a>
+          <a id="imp" href="signin.html"><button>Log In</button></a>
+        </div>
       </nav>
     </header>
 
@@ -925,5 +955,30 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      window.onload = async function isAuthenticated() {
+        let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        yesNo = await yesNo.json();
+        let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
+        if (yesNo.message === "yes") {
+          $("#loginSignup").hide;
+          $("#loginSignup").html(div);
+        } else {
+          $("#loginSignup").hide;
+        }
+      };
+
+      async function logout() {
+        let logout = await fetch("http://localhost:3001/logout");
+        logout = await logout.json();
+        console.log(logout.message);
+        if (logout.message === "User logged Out") {
+          alert("User Logged Out Successfully");
+          window.location.reload();
+        } else {
+          alert(logout.message);
+        }
+      }
+    </script>
   </body>
 </html>

@@ -3,11 +3,150 @@
     <meta charset="UTF-8" />
     <title>Car Details</title>
     <link rel="stylesheet" href="/css/bike-detail.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      header {
+        background-color: #19253b59;
+        box-shadow: 0 0 36px 0;
+        backdrop-filter: blur(3px);
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 80%;
+        margin: auto;
+        padding: 1.2rem 0rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding: 0;
+        background-color: transparent;
+        overflow: hidden;
+      }
+
+      li {
+        padding: 0rem 1.1rem;
+        float: left;
+      }
+
+      li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+      }
+
+      li a:hover {
+        color: #91b2ff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .button button {
+        font-weight: 500;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 20%;
+        cursor: pointer;
+      }
+
+      .button button:hover {
+        background-color: #fff;
+        color: #152939;
+        transition: all 0.3s ease-in-out;
+      }
+
+      ul li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        padding-left: 0;
+        left: 0;
+        display: none;
+      }
+
+      ul li:hover > ul,
+      ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        min-width: 150px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0px 3px 5px -1px #ccc;
+      }
+
+      ul li ul li {
+        clear: both;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        border-style: none;
+      }
+
+      .a-hover:hover {
+        color: red;
+      }
+    </style>
   </head>
 
   <body>
     <header>
-      <h1>Bike Details</h1>
+      <nav style="display: flex; flex-direction: row">
+        <div class="logo">
+          <a href="#" class="a-hover">Voyage</a>
+        </div>
+        <ul>
+          <li>
+            <a href="/index.html" id="imp" class="active a-hover">Home</a>
+          </li>
+          <li><a href="#" id="imp" class="a-hover">About</a></li>
+          <li><a href="#" id="imp" class="a-hover">Skills</a></li>
+          <li>
+            <a href="#" style="position: relative" class="a-hover"
+              >Vehicles &dtrif;</a
+            >
+            <ul class="dropdown" style="position: absolute; left: 47%">
+              <li style="margin: 0px"><a href="/bikes.html">Bikes</a></li>
+              <li style="margin: 0px"><a href="/cars.html">Cars</a></li>
+              <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+        </ul>
+        <div class="button" id="loginSignup">
+          <a id="imp" href="/signup.html"><button>Sign Up</button></a>
+          <a id="imp" href="/signin.html"><button>Log In</button></a>
+        </div>
+      </nav>
     </header>
     <div class="container">
       <div class="slideshow-container">
@@ -127,6 +266,7 @@
       let bikeId = url.substring(url.lastIndexOf("/") + 1);
 
       window.onload = async function () {
+        isAuthenticated();
         let bikeDetails = await fetch(`/bikes/bikeD/${bikeId}`);
         bikeDetails = await bikeDetails.json();
         console.log(bikeDetails);
@@ -238,6 +378,30 @@
         </div>`;
 
         $(".details").html(div);
+      }
+
+      async function isAuthenticated() {
+        let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        yesNo = await yesNo.json();
+        let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
+        if (yesNo.message === "yes") {
+          $("#loginSignup").hide;
+          $("#loginSignup").html(div);
+        } else {
+          $("#loginSignup").hide;
+        }
+      }
+
+      async function logout() {
+        let logout = await fetch("http://localhost:3001/logout");
+        logout = await logout.json();
+        console.log(logout.message);
+        if (logout.message === "User logged Out") {
+          alert("User Logged Out Successfully");
+          window.location.reload();
+        } else {
+          alert(logout.message);
+        }
       }
     </script>
   </body>
