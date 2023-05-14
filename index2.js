@@ -178,10 +178,17 @@ app.get("/order/:id", async (req, res) => {
   }
 });
 
+app.get("/isAuthenticated", (req, res) => {
+  console.log(req.user);
+  if (req.isAuthenticated()) return res.status(200).send({ message: "yes" });
+  else return res.status(200).send({ message: "no" });
+});
+
 app.get("/logout", (req, res) => {
+  console.log("Server logout");
   req.logOut((err) => {
     if (err) {
-      res.status(400).send({ message: "logOut error", error: err.message });
+      res.status(200).send({ message: "logOut error", error: err.message });
     }
     res.status(200).send({ message: "User logged Out" });
   });
