@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="https://www.shutterstock.com/image-vector/map-pointer-car-icon-vector-600w-133330619.jpg" type="image/jpg">
+    <link
+      rel="icon"
+      href="https://www.shutterstock.com/image-vector/map-pointer-car-icon-vector-600w-133330619.jpg"
+      type="image/jpg"
+    />
     <title>Voyage</title>
     <style>
       * {
@@ -14,7 +18,7 @@
       }
 
       body {
-        background-image: url("/img/1.jpg");
+        /* background-image: url("/img/1.jpg"); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -959,6 +963,7 @@
     <script>
       window.onload = async function isAuthenticated() {
         let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        console.log(yesNo);
         yesNo = await yesNo.json();
         let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
         if (yesNo.message === "yes") {
