@@ -194,7 +194,7 @@
           </li>
           <li><a href="#" id="imp" class="a-hover">Contact</a></li>
         </ul>
-        <div class="button">
+        <div class="button" id="loginSignup">
           <a id="imp" href="signup.html"><button>Sign Up</button></a>
           <a id="imp" href="signin.html"><button>Log In</button></a>
         </div>
@@ -244,19 +244,23 @@
           <table id="myTable" class="table table-striped table-dark">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Order Id</th>
                 <th scope="col">Vehicle Name</th>
-                <th scope="col">Date</th>
-                <th scope="col">Days</th>
+                <th scope="col">Cost</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="mytbody"></tbody>
           </table>
         </div>
         <!-- </div> -->
       </div>
     </div>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
   <script>
     window.onload = async () => {
       // if authenticate then show
@@ -266,29 +270,53 @@
         "http://localhost:3001/isAuthenticated"
       );
       isAuthenticated = await isAuthenticated.json();
-
+      let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
       if (isAuthenticated.message === "yes") {
+        $("#loginSignup").hide;
+        $("#loginSignup").html(div);
         console.log("fecth and show");
         let orders = await fetch("http://localhost:3001/getMyOrders");
         orders = await orders.json();
         createTable(orders);
-        console.log(orders);
+        // console.log(orders);
       } else {
+        $("#loginSignup").hide;
         window.location = "/signin.html";
       }
     };
 
-    function createTable(orders) {
-      for (order in orders) {
-        console.log(orders[order]);
-        // tableBody.append(createBookList(parseInt(book) + 1, books[book]));
+    async function logout() {
+      let logout = await fetch("http://localhost:3001/logout");
+      logout = await logout.json();
+      console.log(logout.message);
+      if (logout.message === "User logged Out") {
+        alert("User Logged Out Successfully");
+        window.location.reload();
+      } else {
+        alert(logout.message);
       }
-      // return $(`<tr>
-      //                           <th scope="row">${i}</th>
-      //                           <td>${book.bookname}</td>
-      //                           <td>${book.authorname}</td>
-      //                           <td>${book.category}</td>
-      //                   </tr>`);
+    }
+
+    function createTable(orders) {
+      console.log("Creting Table", orders.orders[0]);
+      orders = orders.orders;
+      var tableBody = document.getElementById("mytbody");
+      let div = "";
+      orders.map((order, i) => {
+        console.log(order);
+        // tableBody.append(
+        //   $()
+        // );
+
+        div += `<tr>
+            <th scope="row">${i + 1}</th>
+                                <td>${order._id}</td>
+                                <td>${order.vehicleId.Name}</td>
+                                <td>${order.cost}</td>
+          </tr>`;
+      });
+
+      $("#mytbody").html(div);
     }
   </script>
 </html>
