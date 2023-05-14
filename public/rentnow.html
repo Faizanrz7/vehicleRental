@@ -162,6 +162,101 @@
     </div>
     </div> <!-- /.form-group -->
 
+
+
+
+
+
+
+    <div class="form-group">
+      <h2 class="heading">Documents </h2>
+
+      <div class="grid">
+        <div class="hide-cont">
+          <!--Start Grid-->
+          <div class="radio-cont" style="padding-left:40px;padding-top:11px;">
+            <br>
+            <label>
+              <input type="radio" name="textbox" value="show" onchange="showTextBox()"><span style="color:white;"> With
+                Driver</span>
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>
+              <input type="radio" name="textbox" value="hide" onchange="hideTextBox()"> <span style="color:white;">
+                Without Driver</span>
+            </label>
+          </div>
+          <!-- </div> -->
+          <div class="col-1-3">
+            <div class="controls" style="padding-left:70px;">
+              <input type="text" id="regno" class="floatLabel" placeholder="License Number" name="carmodel"
+                style=" display:none;width:400px;height:45px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Grid-->
+      <br>
+
+      <div class="grid">
+        <!--Start Grid-->
+        <div class="col-1-3" style="width:320px;">
+          <div class="controls" style="width:320px;">
+            <input type="text" id="aadhar" placeholder="Aadhar Number" class="floatLabel" name="aadhar"
+              pattern="\d{4}-\d{4}-\d{4}" maxlength="19" required>
+            <!-- <label for="carmodel">Car Model</label> -->
+          </div>
+        </div>
+
+        <div class="col-1-3" style="padding-left:15px;width:370px;">
+          <div class="controls">
+            <div class="file-cont">
+              <input type="file" id="upload-file" class="floatLabel" name="something">
+              <!-- <label for="file-upload">Upload file</label> -->
+            </div>
+            <!-- <label for="something">Something</label> -->
+          </div>
+        </div>
+      </div>
+      <!--End Grid-->
+      <br>
+      <div class="grid">
+        <!--Start Grid-->
+        <div class="col-1-3" style="width:320px;">
+          <div class="controls" style="width:320px;">
+            <input type="text" id="pancard" placeholder="PAN NUMBER" class="floatLabel" name="aadhar" required>
+            <!-- <label for="carmodel">Car Model</label> -->
+          </div>
+        </div>
+
+        <div class="col-1-3" style="padding-left:15px;">
+          <div class="controls">
+            <div class="file-cont">
+              <input type="file" id="upload-file" class="floatLabel" name="something">
+            </div>
+            <!-- <label for="something">Something</label> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="grid">
+    </div>
+    <div class="wrap">
+      <a href="payment.html"><button class="btn" type="submit" value="Submit">Submit</button></a>
+    </div>
+    </div>
+    </div> <!-- /.form-group -->
+
+
+
+
+
+
+
+
+    
+
   </form>
 </body>
 
