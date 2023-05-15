@@ -148,7 +148,7 @@
         </div>
         <ul>
           <li>
-            <a href="/index.html" id="imp" class="active a-hover">Home</a>
+            <a href="/index.html" id="imp" class="a-hover">Home</a>
           </li>
           <li>
             <a href="/myOrders.html" id="imp" class="a-hover">My Orders</a>
@@ -361,9 +361,7 @@
                   background-image: url('https://st2.depositphotos.com/1008851/10344/v/450/depositphotos_103447524-stock-illustration-gear-charcoal-silhouette.jpg');
                 "
               ></span>
-              <p class="car-feature-text">6 ` +
-          bikeDetail.Gears +
-          `</p>
+              <p class="car-feature-text">5</p>
               &nbsp;&emsp;
               <span
                 class="car-feature-symbol"
@@ -371,9 +369,7 @@
                   background-image: url('https://img.icons8.com/?size=512&id=12776&format=png');
                 "
               ></span>
-              <p class="car-feature-text">` +
-          bikeDetail.Date +
-          `</p>
+              <p class="car-feature-text">2020</p>
             </div>
             <br />
             <div class="rows">
@@ -384,8 +380,8 @@
                 "
               ></span>
               <p class="car-feature-text">` +
-          bikeDetail.Power +
-          `</p>
+          Math.floor(Math.random() * (400 - 200 + 1) + 200) +
+          ` CC</p>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span
                 class="car-feature-symbol"
@@ -394,7 +390,7 @@
                 "
               ></span>
               <p class="car-feature-text">` +
-          bikeDetail.Mileage +
+          Math.floor(Math.random() * (70 - 50 + 1) + 50) +
           `</p>
             </div>
             <br />
