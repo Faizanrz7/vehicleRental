@@ -37,7 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 authUser = async (user, password, done) => {
-  // console.log(user);
+  console.log(user);
   const User = await UserModel.findOne({ username: user });
   // console.log(User);
   if (User) {
@@ -169,7 +169,7 @@ app.get("/order/:id", async (req, res) => {
   const userId = req.user;
 
   try {
-    const newOrder = new OrderedBulkOperation({
+    const newOrder = new OrderModel({
       vehicleId: vehicleId,
       userId: userId,
       cost: req.body.cost,
@@ -207,6 +207,7 @@ app.post("/createOrder", async (req, res) => {
         const updateUser = await UserModel.findOneAndUpdate(
           { _id: req.user },
           {
+            Name: req.body.Name,
             Aadhar: req.body.Aadhar,
             Pan: req.body.Pan,
             Address: {

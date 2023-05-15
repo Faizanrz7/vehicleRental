@@ -229,8 +229,8 @@
       let vname = document.getElementById('vname');
       let email = document.getElementById('email');
       let phone = document.getElementById('phone');
-      let name = document.getElementById('street');
-      let street = document.getElementById('street-number');
+      let name = document.getElementById('name');
+      let street = document.getElementById('street');
       let streetNumber = document.getElementById('street-number');
       let postCode = document.getElementById('post-code');
       let country = document.getElementById('country');
@@ -259,6 +259,7 @@
         let userData = data.userData;
 
         let options;
+        console.log(userData.username)
         if(userData.Name){
           name.value = userData.Name;
           street.value = userData.Address.Street;
