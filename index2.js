@@ -190,19 +190,19 @@ app.get("/isAuthenticated", (req, res) => {
 
 const Razorpay = require("razorpay");
 var instance = new Razorpay({
-  key_id: "rzp_test_nSXJj85corDzDt",
-  key_secret: "70mT1FHBO7ZNPx3eACRC32H1",
+  key_id: "rzp_test_xB7EEf38d4Kv4S",
+  key_secret: "Xz2B7SZFqyqtAWeHCI4qs1fZ",
 });
 
 app.post("/createOrder", async (req, res) => {
   try {
-    // console.log(req.body);
+    console.log(req.body.pickUp);
     // console.log(req.user);
 
     const User = await UserModel.find({ _id: req.user });
     console.log("USer", User.Name === undefined);
     if (User.Name === undefined) {
-      console.log("finda and update");
+      // console.log("finda and update");
       try {
         const updateUser = await UserModel.findOneAndUpdate(
           { _id: req.user },
@@ -223,7 +223,7 @@ app.post("/createOrder", async (req, res) => {
           }
         );
         // await updateUser.save();
-        console.log(updateUser);
+        // console.log(updateUser);
       } catch (error) {
         console.log("Update User", error.message);
       }
@@ -235,15 +235,22 @@ app.post("/createOrder", async (req, res) => {
     };
     instance.orders.create(options, async function (err, order) {
       // console.log(order);
-      const newOrder = new OrderModel({
-        userId: req.user,
-        vehicleId: req.body.vehicleId,
-        cost: req.body.Cost,
-        razorPayId: order.id,
-        Status: "Failed",
-      });
-      await newOrder.save();
-      res.status(200).send({ order: order, orderDb: newOrder });
+
+      try {
+        const newOrder = new OrderModel({
+          userId: req.user,
+          vehicleId: req.body.vehicleId,
+          cost: req.body.Cost,
+          razorPayId: order.id,
+          pickup: req.body.pickUp,
+          drop: req.body.drop,
+          Status: "Failed",
+        });
+        await newOrder.save();
+        res.status(200).send({ order: order, orderDb: newOrder });
+      } catch (error) {
+        console.log(error.message);
+      }
     });
   } catch (error) {
     res.send({ message: "Creating Order failed", err: error.message });

@@ -9,6 +9,8 @@ const OrderSchema = new mongoose.Schema({
   razorPayId: String,
   cost: Number,
   Status: String,
+  pickup: String,
+  drop: String,
 });
 
 module.exports = mongoose.model("orders", OrderSchema);
