@@ -37,7 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 authUser = async (user, password, done) => {
-  console.log(user);
+  // console.log(user);
   const User = await UserModel.findOne({ username: user });
   // console.log(User);
   if (User) {
@@ -57,15 +57,15 @@ authUser = async (user, password, done) => {
 passport.use(new LocalStrategy(authUser));
 
 passport.serializeUser((id, done) => {
-  console.log(`--------> Serialize User`);
+  // console.log(`--------> Serialize User`);
   console.log(id);
 
   done(null, id);
 });
 
 passport.deserializeUser((id, done) => {
-  console.log("---------> Deserialize Id");
-  console.log(id);
+  // console.log("---------> Deserialize Id");
+  // console.log(id);
 
   done(null, id);
 });
@@ -97,7 +97,7 @@ app.get("/signup", (req, res) => {
   // res.send(__dirname);
 });
 app.post("/signup", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   try {
     const { username, password, Mobile } = req.body;
     const newUser = new UserModel({
@@ -127,7 +127,7 @@ app.use("/bikes", bikeRouter);
 app.get("/dashboard", (req, res) => {
   //   res.render("dashboard.ejs", { name: req.user.name });
   // req.user will have the id of the user
-  console.log(req.body);
+  // console.log(req.body);
   res.status(200).send({ message: "Success", user: req.user });
 });
 
@@ -149,12 +149,12 @@ app.get("/rentNow/:id", checkAuthenticated, (req, res) => {
 app.post("/rentNow/:id", checkAuthenticated, (req, res) => {
   const userId = req.user;
   const vehicleId = req.params.id;
-  console.log(userId, vehicleId);
+  // console.log(userId, vehicleId);
   res.status(200).send({ message: "Vehicle Staged For rent" });
 });
 
 app.get("/getUserDetails", async (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   try {
     const User = await UserModel.findById(req.user);
     // console.log(User);
@@ -183,7 +183,7 @@ app.get("/order/:id", async (req, res) => {
 });
 
 app.get("/isAuthenticated", (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   if (req.isAuthenticated()) return res.status(200).send({ message: "yes" });
   else return res.status(200).send({ message: "no" });
 });
@@ -196,11 +196,11 @@ var instance = new Razorpay({
 
 app.post("/createOrder", async (req, res) => {
   try {
-    console.log(req.body.pickUp);
+    // console.log(req.body.pickUp);
     // console.log(req.user);
 
     const User = await UserModel.find({ _id: req.user });
-    console.log("USer", User.Name === undefined);
+    // console.log("USer", User.Name === undefined);
     if (User.Name === undefined) {
       // console.log("finda and update");
       try {
@@ -263,7 +263,7 @@ app.get("/getMyOrders", async (req, res) => {
       .populate({ path: "userId" })
       .exec();
 
-    console.log(orders);
+    // console.log(orders);
     res.status(200).send({ orders: orders });
   } catch (error) {
     res
