@@ -70,7 +70,7 @@ passport.deserializeUser((id, done) => {
   done(null, id);
 });
 
-app.listen(3001, () => console.log(`Server started on port 3001...`));
+app.listen(80, () => console.log(`Server started on port 80...`));
 
 app.get("/signin", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/signin.html"));
