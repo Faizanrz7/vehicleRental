@@ -62,7 +62,6 @@ body {
 .avail-col {
   display: flex;
   justify-content: space-between;
-
 }
 
 select,
@@ -90,9 +89,8 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   opacity: 0.5;
 }
 
-
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -130,8 +128,8 @@ label {
 }
 
 .card {
-  max-width: 350px;
-  height: 550px;
+  width: 25vw;
+  height: 65vh;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -155,8 +153,6 @@ img {
 
 .card-body {
   padding: 20px;
-
-
 }
 
 .card-title {

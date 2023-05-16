@@ -7,7 +7,7 @@ body {
   background-color: black;
   /* background-image: url("https://www.enterprise.co.uk/en/home/_jcr_content/root/container/container/container_933387721_/image.coreimg.82.1920.png/1667526272927/img-2-3x-img-2-3x.png"); */
   background-image: url("https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9hZCUyMHdpdGglMjBjYXJzfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
-  
+
   /* background-repeat: no-repeat; */
   height: 100%;
 
@@ -37,27 +37,25 @@ body {
   padding-left: 20px;
 } */
 
-.nav{
-  
+.nav {
 }
 /* body */
-
 
 .content {
   text-align: center;
   font-size: 30px;
   /* margin-top: 50px; */
   position: relative;
-  top: 40px
+  top: 40px;
 }
 
 .card-text {
   text-align: center;
-  color:white;
+  color: white;
 }
 
-.card-body{
-background-color:rgba(33, 37, 45, 1);
+.card-body {
+  background-color: rgba(33, 37, 45, 1);
 }
 
 .container {
@@ -97,6 +95,6 @@ background-color:rgba(33, 37, 45, 1);
 }
 
 .img {
-  width: 80%;
-  height: 100%;
+  /* width: 80%;
+  height: 100%; */
 }
