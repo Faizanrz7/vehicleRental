@@ -245,7 +245,8 @@
         const url = getCurrentURL();
         let vehicleId = url.substring(url.lastIndexOf("/") + 1);
 
-        let data = await fetch(`http://localhost:3001/getDetails/${vehicleId}`);
+        // let data = await fetch(`http://localhost:3001/getDetails/${vehicleId}`);
+        let data = await fetch(`/getDetails/${vehicleId}`);
         data = await data.json();
         console.log(data)
 
@@ -296,7 +297,8 @@
         description: "Test Transaction",
         image: "https://example.com/your_logo",
         order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: `http://localhost:3001/success.html`,
+        // callback_url: `http://16.16.159.99:3001/success.html`,
+        callback_url: `/success.html`,
         prefill: {
           name: name.value,
           email: email.value,
@@ -312,14 +314,16 @@
 
       $.ajax({
         type: "POST",
-        url: "http://localhost:3001/createOrder",
+        // url: "http://localhost:3001/createOrder",
+        url: "/createOrder",
         dataType: "json",
         data: { Name: name.value, Street: street.value, StreetNumber : streetNumber.value, City : city.value, PostCode : postCode.value, Country: country.value, Aadhar : aadhar.value, Pan: pancard.value, Cost:result.value, pickUp:pickUp.value, drop:drop.value, vehicleId  : window.location.href.substring(window.location.href.lastIndexOf("/") + 1)},
         success: function (data) {
           console.log(data);
           orderId = data.order.id;
           orderDb = data.orderDb._id;
-          options.callback_url = `http://localhost:3001/updateOrderStatus/${orderDb}`;
+          // options.callback_url = `http://localhost:3001/updateOrderStatus/${orderDb}`;
+          options.callback_url = `/updateOrderStatus/${orderDb}`;
           console.log(options.callback_url);
           var rzp1 = new Razorpay(options);
           // openRazorPay(orderId);

@@ -285,16 +285,18 @@
       // if authenticate then show
       // else redirect to login pageXOffset
 
-      let isAuthenticated = await fetch(
-        "http://localhost:3001/isAuthenticated"
-      );
+      // let isAuthenticated = await fetch(
+      //   "http://localhost:3001/isAuthenticated"
+      // );
+      let isAuthenticated = await fetch("/isAuthenticated");
       isAuthenticated = await isAuthenticated.json();
       let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
       if (isAuthenticated.message === "yes") {
         $("#loginSignup").hide;
         $("#loginSignup").html(div);
         console.log("fecth and show");
-        let orders = await fetch("http://localhost:3001/getMyOrders");
+        // let orders = await fetch("http://localhost:3001/getMyOrders");
+        let orders = await fetch("/getMyOrders");
         orders = await orders.json();
         createTable(orders);
         // console.log(orders);
@@ -305,7 +307,8 @@
     };
 
     async function logout() {
-      let logout = await fetch("http://localhost:3001/logout");
+      // let logout = await fetch("http://localhost:3001/logout");
+      let logout = await fetch("/logout");
       logout = await logout.json();
       console.log(logout.message);
       if (logout.message === "User logged Out") {

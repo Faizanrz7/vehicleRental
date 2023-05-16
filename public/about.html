@@ -424,5 +424,33 @@
         setTimeout(showSlides, 2000); // Change image every 2 seconds
       }
     </script>
+    <script>
+      window.onload = async function isAuthenticated() {
+        // let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        let yesNo = await fetch("/isAuthenticated");
+        console.log(yesNo);
+        yesNo = await yesNo.json();
+        let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
+        if (yesNo.message === "yes") {
+          $("#loginSignup").hide;
+          $("#loginSignup").html(div);
+        } else {
+          $("#loginSignup").hide;
+        }
+      };
+
+      async function logout() {
+        // let logout = await fetch("http://localhost:3001/logout");
+        let logout = await fetch("/logout");
+        logout = await logout.json();
+        console.log(logout.message);
+        if (logout.message === "User logged Out") {
+          alert("User Logged Out Successfully");
+          window.location.reload();
+        } else {
+          alert(logout.message);
+        }
+      }
+    </script>
   </body>
 </html>

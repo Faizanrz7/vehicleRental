@@ -964,7 +964,8 @@
     ></script>
     <script>
       window.onload = async function isAuthenticated() {
-        let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        // let yesNo = await fetch("http://localhost:3001/isAuthenticated");
+        let yesNo = await fetch("/isAuthenticated");
         console.log(yesNo);
         yesNo = await yesNo.json();
         let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
@@ -977,7 +978,8 @@
       };
 
       async function logout() {
-        let logout = await fetch("http://localhost:3001/logout");
+        // let logout = await fetch("http://localhost:3001/logout");
+        let logout = await fetch("/logout");
         logout = await logout.json();
         console.log(logout.message);
         if (logout.message === "User logged Out") {

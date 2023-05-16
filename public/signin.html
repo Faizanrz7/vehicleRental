@@ -54,8 +54,8 @@
       var email = document.getElementById("email").value;
       $.ajax({
         type: "POST",
-        url: "http://localhost:3001/login",
-        // url: "http://16.16.159.99:3001/login",
+        // url: "http://localhost:3001/login",
+        url: "/login",
         dataType: "json",
         data: { username: email, password: pass, url : window.location.href.substring(window.location.href.lastIndexOf("/") + 1) },
         success: function (data) {

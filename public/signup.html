@@ -130,8 +130,8 @@
       var number = document.getElementById("number").value;
       $.ajax({
         type: "POST",
-        // url: "http://16.16.159.99:3001/signup",
-        url: "http://localhost:3001/signup",
+        url: "/signup",
+        // url: "http://localhost:3001/signup",
         dataType: "json",
         data: { username: email, password: pass, Mobile: number },
         success: function (data) {
