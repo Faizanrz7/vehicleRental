@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Voyage</title>
-    <link href="/css/about.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="/css/about.css" rel="stylesheet" type="text/css" /> -->
     <style>
       * {
         box-sizing: border-box;
@@ -318,13 +318,15 @@
   <header>
     <nav style="display: flex; flex-direction: row">
       <div class="logo">
-        <a href="#" class="a-hover">Voyage</a>
+        <a href="/index.html" class="a-hover">Voyage</a>
       </div>
       <ul>
         <li>
           <a href="/index.html" id="imp" class="a-hover">Home</a>
         </li>
-        <li><a href="#" id="imp" class="a-hover">About</a></li>
+        <li>
+          <a href="/myOrders.html" id="imp" class="a-hover">My Orders</a>
+        </li>
         <!-- <li><a href="#" id="imp" class="a-hover">Skills</a></li> -->
         <li>
           <a href="#" style="position: relative" class="a-hover"
@@ -336,7 +338,7 @@
             <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
           </ul>
         </li>
-        <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+        <li><a href="/about.html" id="imp" class="a-hover">About Us</a></li>
       </ul>
       <div class="button" id="loginSignup">
         <a id="imp" href="signup.html"><button>Sign Up</button></a>
@@ -424,6 +426,11 @@
         setTimeout(showSlides, 2000); // Change image every 2 seconds
       }
     </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
     <script>
       window.onload = async function isAuthenticated() {
         // let yesNo = await fetch("http://localhost:3001/isAuthenticated");

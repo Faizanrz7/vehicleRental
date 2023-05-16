@@ -148,8 +148,10 @@
           <li>
             <a href="/index.html" id="imp" class="a-hover">Home</a>
           </li>
-          <li><a href="#" id="imp" class="a-hover">About</a></li>
-          <li><a href="#" id="imp" class="a-hover">Skills</a></li>
+          <!-- <li><a href="#" id="imp" class="a-hover">About</a></li> -->
+          <li>
+            <a href="/myOrders.html" id="imp" class="a-hover">My Orders</a>
+          </li>
           <li>
             <a href="#" style="position: relative" class="a-hover"
               >Vehicles &dtrif;</a
@@ -168,7 +170,7 @@
               <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
             </ul>
           </li>
-          <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+          <li><a href="/about.html" id="imp" class="a-hover">About</a></li>
         </ul>
         <div class="button" id="loginSignup">
           <a id="imp" href="signup.html"><button>Sign Up</button></a>
@@ -183,6 +185,11 @@
       <div class="slideshow-container"></div>
       <div class="details"></div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -220,12 +227,35 @@
       let carId = url.substring(url.lastIndexOf("/") + 1);
 
       window.onload = async function () {
+        let yesNo = await fetch("/isAuthenticated");
+        yesNo = await yesNo.json();
+        let div = `<a id="imp" onclick="logout()"><button>Logout</button></a>`;
+        if (yesNo.message === "yes") {
+          $("#loginSignup").hide;
+          $("#loginSignup").html(div);
+        } else {
+          $("#loginSignup").hide;
+        }
+
         let carDetails = await fetch(`/cars/carD/${carId}`);
         carDetails = await carDetails.json();
         // console.log("Car", carDetails);
         createDesign(carDetails);
         showSlides();
       };
+
+      async function logout() {
+        // let logout = await fetch("http://localhost:3001/logout");
+        let logout = await fetch("/logout");
+        logout = await logout.json();
+        console.log(logout.message);
+        if (logout.message === "User logged Out") {
+          alert("User Logged Out Successfully");
+          window.location.reload();
+        } else {
+          alert(logout.message);
+        }
+      }
 
       function createDesign(carDetail) {
         let div = "";
