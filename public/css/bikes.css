@@ -107,6 +107,7 @@ label {
 }
 
 /* card */
+
 .card-col {
   display: flex;
   flex-direction: column;
