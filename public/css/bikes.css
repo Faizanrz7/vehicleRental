@@ -107,6 +107,7 @@ label {
 }
 
 /* card */
+
 .card-col {
   display: flex;
   flex-direction: column;
@@ -129,7 +130,7 @@ label {
 
 .card {
   width: 25vw;
-  height: 65vh;
+  height: 32rem;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -148,7 +149,7 @@ img {
 
 .card-header img {
   width: 100%;
-  height: 18vw;
+  height: 15rem;
 }
 
 .card-body {
