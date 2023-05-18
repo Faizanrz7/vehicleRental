@@ -17,11 +17,26 @@
       }
 
       body {
-        background-image: url("/img/1.jpg");
+        /* background-image: url("/img/1.jpg"); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         /* height: 100dvh; */
+      }
+
+      body {
+        background-color: black;
+        /* background-image: url("https://www.enterprise.co.uk/en/home/_jcr_content/root/container/container/container_933387721_/image.coreimg.82.1920.png/1667526272927/img-2-3x-img-2-3x.png"); */
+        background-image: url("https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9hZCUyMHdpdGglMjBjYXJzfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+
+        /* background-repeat: no-repeat; */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
       }
 
       /*nav */
@@ -134,18 +149,18 @@
       /* table {
         margin: 0 auto;
         width: 70% !important;
-      }
-      .tableDiv {
+      } */
+      /* .tableDiv {
         display: flex;
-        /* justify-content: center !important; */
-      /* height: 50vh;
-        margin-top: 15vh; */
-      /* } */
+        justify-content: center !important;
+      height: 50vh;
+        margin-top: 15vh;
+      } */
 
       .container {
         margin-top: 40px;
         width: 100%;
-        height: 630px;
+        /* height: 60vh; */
         display: flex;
         flex-direction: column !important;
         color: whitesmoke;
@@ -154,6 +169,7 @@
 
       .booklist {
         /* background-color: black; */
+        height: 60vh !important;
         color: white;
       }
       .box {
@@ -177,7 +193,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/style.css" rel="stylesheet" type="text/css" /> -->
 
     <header>
       <nav style="display: flex; flex-direction: row">
@@ -208,7 +224,7 @@
             >
               <li style="margin: 0px"><a href="/bikes.html">Bikes</a></li>
               <li style="margin: 0px"><a href="/cars.html">Cars</a></li>
-              <li style="margin: 0px"><a href="/buses.html">Buses</a></li>
+              <li style="margin: 0px"><a href="/bus.html">Buses</a></li>
             </ul>
           </li>
           <li><a href="/about.html" id="imp" class="a-hover">About Us</a></li>
@@ -263,7 +279,7 @@
           <table id="myTable" class="table table-striped table-dark">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <!-- <th scope="col">#</th> -->
                 <th scope="col">Order Id</th>
                 <th scope="col">Vehicle Name</th>
                 <th scope="col">PickUp Date</th>
@@ -301,8 +317,8 @@
         // let orders = await fetch("http://localhost:3001/getMyOrders");
         let orders = await fetch("/getMyOrders");
         orders = await orders.json();
+        console.log(orders);
         createTable(orders);
-        // console.log(orders);
       } else {
         $("#loginSignup").hide;
         window.location = "/signin.html";
@@ -322,30 +338,39 @@
       }
     }
 
-    function createTable(orders) {
-      console.log("Creting Table", orders.orders[0]);
+    async function createTable(orders) {
+      console.log("Creating Table", orders.orders[0]);
       orders = orders.orders;
+      // console.log(orders);
       var tableBody = document.getElementById("mytbody");
       let div = "";
-      orders.map((order, i) => {
-        console.log(order);
+
+      let j = 1;
+      orders.map(async (order, i) => {
+        // console.log(order);
+        let vehicleData = await fetch(`/getDetails/${order.vehicleId}`);
+        vehicleData = await vehicleData.json();
+        console.log("Vehicle Data", vehicleData.vehicleData.Name);
         // tableBody.append(
         // tableBody.append(
         //   $()
         // );
-        if (order.Status === "Success" && order.vehicleId != null) {
-          div += `<tr>
-            <th scope="row">${i + 1}</th>
+        // if (order.Status === "Success" && order.vehicleId != null) {
+
+        if (order.Status === "Success") {
+          console.log(order.Status === "Success");
+          div = `<tr>
                                 <td>${order._id}</td>
-                                <td>${order.vehicleId.Name}</td>
+                                <td>${vehicleData.vehicleData.Name}</td>
                                 <td>${order.pickup}</td>
                                 <td>${order.drop}</td>
                                 <td>${order.cost}</td>
           </tr>`;
+          j = j + 1;
+          $("tbody").append(div);
         }
+        // console.log(div);
       });
-
-      $("#mytbody").html(div);
     }
   </script>
 </html>

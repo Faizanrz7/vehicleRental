@@ -259,11 +259,14 @@ app.post("/createOrder", async (req, res) => {
 app.get("/getMyOrders", async (req, res) => {
   try {
     const orders = await OrderModel.find({ userId: req.user })
-      .populate({ path: "vehicleId" })
+      // .populate({ path: "vehicleId" })
       .populate({ path: "userId" })
       .exec();
 
-    // console.log(orders);
+    // console.log(orders._id);
+
+    // const vehicleData = await CarModel.find({ _id: orders.vehicleId });
+    // console.log(vehicleData);
     res.status(200).send({ orders: orders });
   } catch (error) {
     res
@@ -292,7 +295,7 @@ app.post("/updateOrderStatus/:orderId", async (req, res) => {
 app.get("/getDetails/:vehicleId", async (req, res) => {
   try {
     let vehicleData = await CarModel.findOne({ _id: req.params.vehicleId });
-    console.log(vehicleData === null);
+    // console.log(vehicleData === null);
     if (vehicleData === null)
       vehicleData = await BikeModel.findOne({ _id: req.params.vehicleId });
     if (vehicleData === null)

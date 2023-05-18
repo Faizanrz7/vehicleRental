@@ -1,144 +1,150 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="icon" href="https://www.shutterstock.com/image-vector/map-pointer-car-icon-vector-600w-133330619.jpg" type="image/jpg">
-  <title>Voyage</title>
-  <style>
-    * {
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href="https://www.shutterstock.com/image-vector/map-pointer-car-icon-vector-600w-133330619.jpg"
+      type="image/jpg"
+    />
+    <title>Voyage</title>
+    <style>
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+        font-family: "Poppins", sans-serif;
+      }
 
-    body {
-        background-image: url('/img/1.jpg');
+      body {
+        background-image: url("/img/1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 100dvh;
-    }
+      }
 
-    /*nav */
-    header {
+      /*nav */
+      header {
         background-color: #19253b59;
         box-shadow: 0 0 36px 0;
         backdrop-filter: blur(3px);
-    }
+      }
 
-    nav {
+      nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 80%;
         margin: auto;
         padding: 1.2rem 0rem;
-    }
+      }
 
-    .logo {
+      .logo {
         font-size: 1.3rem;
         font-weight: 800;
-    }
+      }
 
-    .logo a {
+      .logo a {
         color: #fff;
         text-decoration: none;
-    }
+      }
 
-    ul {
+      ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         padding: 0;
         background-color: transparent;
         overflow: hidden;
-    }
+      }
 
-    li {
+      li {
         padding: 0rem 1.1rem;
         float: left;
-    }
+      }
 
-    li a {
+      li a {
         color: #fff;
         text-decoration: none;
         font-size: 1rem;
         font-weight: 600;
-        letter-spacing: .7px;
-    }
+        letter-spacing: 0.7px;
+      }
 
-    li a:hover {
+      li a:hover {
         color: #91b2ff;
-        transition: all .3s ease-in-out
-    }
+        transition: all 0.3s ease-in-out;
+      }
 
-    .button {
+      .button {
         display: flex;
         gap: 1rem;
-    }
+      }
 
-    .button button {
+      .button button {
         font-weight: 500;
         color: #fff;
         border: 1px solid #fff;
         background-color: transparent;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         border-radius: 20%;
         cursor: pointer;
-    }
-
-    .button button:hover {
-        background-color: #fff;
-        color: #152939;
-        transition: all .3s ease-in-out;
-    }
-
-       ul li ul {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      padding-left: 0;
-      left: 0;
-      display: none;
       }
 
-    ul li:hover > ul,
-    ul li ul:hover {
-      visibility: visible;
-      opacity: 1;
-      display: block;
-      min-width: 150px;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      box-shadow: 0px 3px 5px -1px #ccc;
-    }
+      .button button:hover {
+        background-color: #fff;
+        color: #152939;
+        transition: all 0.3s ease-in-out;
+      }
 
-    ul li ul li {
-      clear: both;
-      width: 100%;
-      text-align: left;
-      margin-bottom: 20px;
-      border-style: none;
-    }
+      ul li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        padding-left: 0;
+        left: 0;
+        display: none;
+      }
 
-    .a-hover:hover{
-      color:red;
-    }
-  </style>
-</head>
+      ul li:hover > ul,
+      ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        min-width: 150px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0px 3px 5px -1px #ccc;
+      }
 
-<body>
-  <script src="bus.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="css/bus.css" rel="stylesheet" type="text/css" />
+      ul li ul li {
+        clear: both;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        border-style: none;
+      }
 
+      .a-hover:hover {
+        color: red;
+      }
+    </style>
+  </head>
 
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <body>
+    <script src="bus.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="css/bus.css" rel="stylesheet" type="text/css" />
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Vehicle Rental</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -175,27 +181,30 @@
     </div>
   </nav> -->
 
-  <header>
-    <nav style="display: flex;flex-direction: row;">
+    <header>
+      <nav style="display: flex; flex-direction: row">
         <div class="logo">
-            <a href="index.html" class="a-hover">Voyage</a>
+          <a href="index.html" class="a-hover">Voyage</a>
         </div>
         <ul>
-            <li><a href="index.html" id="imp" class="active a-hover">Home</a></li>
-            <li><a href="#" id="imp" class="a-hover">About</a></li>
-            <li><a href="#" style="position:relative;" class="a-hover">Vehicles &dtrif;</a>
-              <ul class="dropdown" style="position:absolute;left:75%;">
-                <li style="margin:0px;"><a href="#">Bikes</a></li>
-                <li style="margin:0px;"><a href="#">Cars</a></li>
-                <li style="margin:0px;"><a href="#">Buses</a></li>
-              </ul>
-            </li>
-            <li><a href="#" id="imp" class="a-hover">Contact</a></li>
+          <li><a href="index.html" id="imp" class="active a-hover">Home</a></li>
+          <li><a href="#" id="imp" class="a-hover">About</a></li>
+          <li>
+            <a href="#" style="position: relative" class="a-hover"
+              >Vehicles &dtrif;</a
+            >
+            <ul class="dropdown" style="position: absolute; left: 75%">
+              <li style="margin: 0px"><a href="#">Bikes</a></li>
+              <li style="margin: 0px"><a href="#">Cars</a></li>
+              <li style="margin: 0px"><a href="#">Buses</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="imp" class="a-hover">Contact</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-    <br><br>
+    <br /><br />
 
     <div>
       <div class=""></div>
@@ -206,17 +215,33 @@
       <div class="card-row">
         <div class="card">
           <div class="card-header">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
               <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100"
+                  <img
+                    class="d-block w-100"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_qovQ6RwqSgMwVSWyiAn2bn775Z4eeF_9uu3CQjcdEQ&usqp=CAU&ec=48665699"
-                    alt="First slide">
+                    alt="First slide"
+                  />
                 </div>
                 <!-- <div class="carousel-item">
                   <img class="d-block w-100"
@@ -228,12 +253,28 @@
                     alt="Third slide">
                 </div> -->
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -245,16 +286,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 500</li>
               <li><strong>Bike Type:</strong> Normal Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -262,7 +316,6 @@
                   <span class="star">&#9733;</span>
                   <!-- <span class="star">&#9733;</span> -->
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
@@ -272,24 +325,35 @@
           </div>
         </div>
 
-
-
-
-
-
         <div class="card">
           <div class="card-header">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
               <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100"
+                  <img
+                    class="d-block w-100"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-s-eiYYp4IZqojxQ5TlLKGw3FmGxmux2nhEoVaXJjgA&usqp=CAU&ec=48665699"
-                    alt="First slide">
+                    alt="First slide"
+                  />
                 </div>
                 <!-- <div class="carousel-item">
                   <img class="d-block w-100"
@@ -301,12 +365,28 @@
                     alt="Third slide">
                 </div> -->
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -318,16 +398,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 700</li>
               <li><strong>Bike Type:</strong> Normal Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -335,7 +428,6 @@
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
@@ -345,19 +437,35 @@
           </div>
         </div>
 
-
         <div class="card">
           <div class="card-header">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
               <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100"
-                    src="https://punetours.com/wp-content/uploads/2017/09/luxury-bus-hire-pune.jpg" alt="First slide">
+                  <img
+                    class="d-block w-100"
+                    src="https://punetours.com/wp-content/uploads/2017/09/luxury-bus-hire-pune.jpg"
+                    alt="First slide"
+                  />
                 </div>
                 <!-- <div class="carousel-item">
                   <img class="d-block w-100"
@@ -370,12 +478,28 @@
                     alt="Third slide">
                 </div> -->
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -387,16 +511,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 1500</li>
               <li><strong>Bike Type:</strong> Sports Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -404,7 +541,6 @@
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
@@ -420,17 +556,33 @@
       <div class="card-row">
         <div class="card">
           <div class="card-header">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
               <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100"
+                  <img
+                    class="d-block w-100"
                     src="https://seweverythingblog.files.wordpress.com/2022/01/img_0215.jpg?w=1024"
-                    alt="First slide">
+                    alt="First slide"
+                  />
                 </div>
                 <!-- <div class="carousel-item">
                   <img class="d-block w-100"
@@ -442,12 +594,28 @@
                     alt="Third slide">
                 </div> -->
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -461,16 +629,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 520</li>
               <li><strong>Bike Type:</strong> Mountain Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -478,7 +659,6 @@
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
@@ -490,8 +670,10 @@
 
         <div class="card">
           <div class="card-header">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXH4KTqo6WqwfwIf7lDajOHDkXDq24sZ8N_18E-JjTXyQ_fibSxemRTfHbIEHZF5t-HqiTNSG1hE&usqp=CAU&ec=48665699"
-              alt="Bike Image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXH4KTqo6WqwfwIf7lDajOHDkXDq24sZ8N_18E-JjTXyQ_fibSxemRTfHbIEHZF5t-HqiTNSG1hE&usqp=CAU&ec=48665699"
+              alt="Bike Image"
+            />
           </div>
           <div class="card-body">
             <h2 class="card-title">Modern Bus</h2>
@@ -502,16 +684,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 520</li>
               <li><strong>Bike Type:</strong> Mountain Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
-
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -519,21 +714,21 @@
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
               <a href="#" class="btn">Rent Now</a> &nbsp;&nbsp;&nbsp;&nbsp;
               <a href="#" class="btn">View Details</a>
-
             </div>
           </div>
         </div>
 
         <div class="card">
           <div class="card-header">
-            <img src="https://static.theprint.in/wp-content/uploads/2022/11/BUS.jpg"
-              alt="Bike Image">
+            <img
+              src="https://static.theprint.in/wp-content/uploads/2022/11/BUS.jpg"
+              alt="Bike Image"
+            />
           </div>
           <div class="card-body">
             <h2 class="card-title">Tourist Bus</h2>
@@ -544,15 +739,29 @@
             <ul class="card-list">
               <li><strong>Price per day:</strong> 520</li>
               <li><strong>Bike Type:</strong> Mountain Bike</li>
-              <li class="avail-col"><strong>Available colors:</strong>
+              <li class="avail-col">
+                <strong>Available colors:</strong>
                 <div class="color-picker">
-                  <div class="color-circle" style="background-color: #000000;"></div>
-                  <div class="color-circle" style="background-color: #f54242;"></div>
-                  <div class="color-circle" style="background-color: #ffffff;"></div>
-                  <div class="color-circle" style="background-color: #696969;"></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #000000"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #f54242"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #ffffff"
+                  ></div>
+                  <div
+                    class="color-circle"
+                    style="background-color: #696969"
+                  ></div>
                 </div>
               </li>
-              <li class="avail-col"><strong>Rating:</strong>
+              <li class="avail-col">
+                <strong>Rating:</strong>
                 <div class="rating">
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
@@ -560,7 +769,6 @@
                   <span class="star">&#9733;</span>
                   <span class="star">&#9733;</span>
                 </div>
-
               </li>
             </ul>
             <div class="rent-btn">
@@ -572,23 +780,21 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
     <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-</body>
-
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
